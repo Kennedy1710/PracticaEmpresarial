@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ProcesarUsuarios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CodUsuario" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Empresa" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="EsEmpleado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CodEmpleado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Contrasena" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ContrasenaVence" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CambioProximoInicio" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DiasVencimiento" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="MaximoIntentos" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Correo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioSesion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarUsuariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarUsuariosResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Response">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="RequiereCambiarContraseña" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Message" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Result" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Intentos" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultarUsuarios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarUsuariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarUsuariosResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="usr" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pass" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="LoginResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarDepartamentos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Departamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Departamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdDepartamento" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Alias" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarDepartamentosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarDepartamentosResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarDepartamentos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Departamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarDepartamentosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarDepartamentosResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarPuestos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Puesto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Puesto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPuesto" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdDepartamento" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AliasDepartamento" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Alias" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarPuestosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarPuestosResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPuestos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Puesto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPuestosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarPuestosResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarTipoLicencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TipoLicencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TipoLicencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoLicencia" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Alias" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultarTipoLicenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarTipoLicenciaResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarEmpleadoLicencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:EmpleadoLicencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EmpleadoLicencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdEmpleadoLicencia" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdEmpleado" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoLicencia" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaVencimiento" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarEmpleadoLicenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarEmpleadoLicenciaResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarEmpleadoLicencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:EmpleadoLicencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarEmpleadoLicenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarEmpleadoLicenciaResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarNacionalidad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Nacionalidad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Nacionalidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdNacionalidad" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Alias" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultarNacionalidadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarNacionalidadResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarNomina">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Nomina" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Nomina">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdNomina" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Alias" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoNomina" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Consecutivo" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarNominaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarNominaResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarNomina">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Nomina" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarNominaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarNominaResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarControlVacacional">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:ControlVacacional" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ControlVacacional">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdRegimenVacacional" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Alias" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoAP" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DiasAcuMes" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DiasRestados" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IncluirSabados" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IncluirDomingos" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarControlVacacionalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarControlVacacionalResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarControlVacacional">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:ControlVacacional" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarControlVacacionalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarControlVacacionalResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarFormaPago">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:FormaPago" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="FormaPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdFormaPago" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Alias" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultarFormaPagoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarFormaPagoResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarCapacitacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Capacitacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Capacitacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdRegistro" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoCapacitacion" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaRegistro" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaFinalizacion" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CantidadHoras" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NombreCapacitacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NombreDelCapacitador" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EmpresaCapacitadora" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Formato" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CargoPagoCapacitacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DocumentoAdjunto" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarCapacitacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarCapacitacionResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarCapacitacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Capacitacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarCapacitacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarCapacitacionResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarEmpleado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Empleado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Empleado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdEmpleado" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdNacionalidad" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdDepartamento" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPuesto" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdNomina" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdFormaPago" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdRegimenVacacional" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CodigoEmpleado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PrimerNombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SegundoNombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PrimerApellido" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SegundoApellido" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoIdentificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NumeroIdentificacion" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="AhorroAsociacion" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TelefonoPrincipal" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TelefonoSecundario" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TelefonoEmergencia" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ContactoEmergencia" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaNacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaIngreso" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaSalida" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoDeSangre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DireccionDomicilio" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Sexo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EstadoCivil" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SubEstado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CorreoElectronico" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ConyugeDependiente" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="HijosDependientes" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NumeroAsegurado" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VacacionesPendientes" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UltimoCambioVac" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SalarioReferencia" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Foto" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObservacionesGenerales" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarEmpleadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarEmpleadoResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarEmpleado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Empleado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarEmpleadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarEmpleadoResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarAccionDePersonal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:AccionDePersonal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AccionDePersonal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdAccionPersonal" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoAP" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdEmpleado" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdNacionalidad" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdDepartamento" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPuesto" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdNomina" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdFormaPago" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdRegimenVacacional" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EstadoAP" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioAprobacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaAprobacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioAplicacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaAplicacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCanelacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCancelacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioDenegacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaDenegacion" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DiasAP" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaRige" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaVence" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SaldoVacaciones" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="AhorroAsociacion" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CodigoEmpleado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EmpleadoPrimerNombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EmpleadoSegundoNombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EmpleadoPrimerApellido" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EmpleadoSegundoApellido" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoIdentificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NumeroIdentificacion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TelefonoPrincipal" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TelefonoSecundario" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TelefonoEmergencia" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ContactoEmergencia" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaNacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoSangre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DireccionDomicilio" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Sexo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EstadoCivil" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SubEstado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CorreoElectronico" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ConyugeDependiente" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="HijosDependientes" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NumeroAsegurado" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VacacionesPendientes" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UltimoCambioVacacional" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SalarioReferencia" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Foto" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObservacionesGenerales" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObservacionesAP" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarAccionDePersonalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarAccionDePersonalResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarAccionDePersonal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:AccionDePersonal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarAccionDePersonalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarAccionDePersonalResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarNominasHistorico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:NominasHistorico" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="NominasHistorico">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdNomina" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Consecutivo" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Periodo" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaPago" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCalculo" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioAprobacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaAprobacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioAplicacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaAplicacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarNominasHistoricoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarNominasHistoricoResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarNominasHistorico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:NominasHistorico" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarNominasHistoricoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarNominasHistoricoResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarEmpleadoConceptoNomina">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:EmpleadoConceptoNomina" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EmpleadoConceptoNomina">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdEmpleado" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdConcepto" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdNomina" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdConceptoLiquidacion" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ConsecutivoNomina" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Cantidad" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Monto" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Total" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarEmpleadoConceptoNominaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarEmpleadoConceptoNominaResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarEmpleadoConceptoNomina">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:EmpleadoConceptoNomina" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarEmpleadoConceptoNominaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarEmpleadoConceptoNominaResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarEmpleadoConcepto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:EmpleadoConcepto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EmpleadoConcepto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdConcepto" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdEmpleado" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NumeroCuotas" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CuotasAplicadas" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SaldoInicial" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Saldo" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Acumulado" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaUltimaAplicacion" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaProximaAplicacion" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaVencimiento" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Cantidad" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Monto" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Comentarios" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarEmpleadoConceptoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarEmpleadoConceptoResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarEmpleadoConcepto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:EmpleadoConcepto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarEmpleadoConceptoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarEmpleadoConceptoResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarConcepto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Conceptos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Conceptos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdConcepto" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Concepto" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoConcepto" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Unidad" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Salarial" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Fijo" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Liquidable" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Excluyente" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CantidadEditable" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="MontoEditable" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UsaCantidad" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UsaMonto" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FormulaDefinida" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ImprimeComprobante" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ImprimeAcumulado" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FactorRedondeo" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarConceptoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarConceptoResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarConcepto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Conceptos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarConceptoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarConceptoResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarConceptoFormula">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:ConceptoFormula" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ConceptoFormula">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdConceptoFormula" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdConcepto" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Secuencia" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ValorInicial" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ValorFinal" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CantidadMonto" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NivelFormula" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UsaCantidad" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UsaMonto" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarConceptoFormulaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarConceptoFormulaResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarConceptoFormula">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:ConceptoFormula" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarConceptoFormulaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarConceptoFormulaResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarConceptoLiquidacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:ConceptoLiquidacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ConceptoLiquidacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdConceptoLiquidacion" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdConcepto" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaLiquidacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Comentarios" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NumeroLiquidacion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarConceptoLiquidacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarConceptoLiquidacionResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarConceptoLiquidacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:ConceptoLiquidacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarConceptoLiquidacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarConceptoLiquidacionResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarEmpleadoConceptoLiquidacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:EmpleadoConceptoLiquidacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EmpleadoConceptoLiquidacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdConceptoLiquidacion" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdEmpleado" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaLiquidacion" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="MontoCalculado" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="MontoPagar" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Observaciones" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarEmpleadoConceptoLiquidacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarEmpleadoConceptoLiquidacionResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarEmpleadoConceptoLiquidacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:EmpleadoConceptoLiquidacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarEmpleadoConceptoLiquidacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarEmpleadoConceptoLiquidacionResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

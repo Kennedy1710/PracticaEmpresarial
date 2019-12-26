@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceAsepba" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:60965/ServiceAsepba.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceAsepba_ProcesarUsuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarUsuarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarUsuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarUsuarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarDepartamentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarDepartamentos" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarDepartamentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarDepartamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarDepartamentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarDepartamentos" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarDepartamentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarDepartamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarPuestos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarPuestos" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarPuestos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarPuestosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarPuestos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPuestos" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarPuestos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPuestosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarTipoLicencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarTipoLicencia" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarTipoLicencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarTipoLicenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarEmpleadoLicencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarEmpleadoLicencia" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarEmpleadoLicencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarEmpleadoLicenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarEmpleadoLicencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarEmpleadoLicencia" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarEmpleadoLicencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarEmpleadoLicenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarNacionalidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarNacionalidad" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarNacionalidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarNacionalidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarNomina_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarNomina" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarNomina_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarNominaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarNomina_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarNomina" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarNomina_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarNominaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarControlVacacional_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarControlVacacional" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarControlVacacional_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarControlVacacionalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarControlVacacional_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarControlVacacional" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarControlVacacional_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarControlVacacionalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarFormaPago_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarFormaPago" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarFormaPago_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarFormaPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarCapacitacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarCapacitacion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarCapacitacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarCapacitacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarCapacitacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCapacitacion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarCapacitacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCapacitacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarAccionDePersonal_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarAccionDePersonal" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarAccionDePersonal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarAccionDePersonalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarAccionDePersonal_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAccionDePersonal" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarAccionDePersonal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAccionDePersonalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarNominasHistorico_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarNominasHistorico" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarNominasHistorico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarNominasHistoricoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarNominasHistorico_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarNominasHistorico" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarNominasHistorico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarNominasHistoricoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarEmpleadoConceptoNomina_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarEmpleadoConceptoNomina" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarEmpleadoConceptoNomina_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarEmpleadoConceptoNominaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarEmpleadoConceptoNomina_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarEmpleadoConceptoNomina" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarEmpleadoConceptoNomina_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarEmpleadoConceptoNominaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarEmpleadoConcepto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarEmpleadoConcepto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarEmpleadoConcepto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarEmpleadoConceptoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarEmpleadoConcepto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarEmpleadoConcepto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarEmpleadoConcepto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarEmpleadoConceptoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarConcepto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarConcepto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarConcepto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarConceptoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarConcepto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarConcepto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarConcepto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarConceptoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarConceptoFormula_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarConceptoFormula" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarConceptoFormula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarConceptoFormulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarConceptoFormula_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarConceptoFormula" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarConceptoFormula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarConceptoFormulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarConceptoLiquidacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarConceptoLiquidacion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarConceptoLiquidacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarConceptoLiquidacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarConceptoLiquidacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarConceptoLiquidacion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarConceptoLiquidacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarConceptoLiquidacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarEmpleadoConceptoLiquidacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarEmpleadoConceptoLiquidacion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarEmpleadoConceptoLiquidacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarEmpleadoConceptoLiquidacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarEmpleadoConceptoLiquidacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarEmpleadoConceptoLiquidacion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarEmpleadoConceptoLiquidacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarEmpleadoConceptoLiquidacionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceAsepba">
+    <wsdl:operation name="ProcesarUsuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarUsuarios" message="tns:IServiceAsepba_ProcesarUsuarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarUsuariosResponse" message="tns:IServiceAsepba_ProcesarUsuarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarUsuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarUsuarios" message="tns:IServiceAsepba_ConsultarUsuarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarUsuariosResponse" message="tns:IServiceAsepba_ConsultarUsuarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/Login" message="tns:IServiceAsepba_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/LoginResponse" message="tns:IServiceAsepba_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarDepartamentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarDepartamentos" message="tns:IServiceAsepba_ProcesarDepartamentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarDepartamentosResponse" message="tns:IServiceAsepba_ProcesarDepartamentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDepartamentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarDepartamentos" message="tns:IServiceAsepba_ConsultarDepartamentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarDepartamentosResponse" message="tns:IServiceAsepba_ConsultarDepartamentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarPuestos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarPuestos" message="tns:IServiceAsepba_ProcesarPuestos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarPuestosResponse" message="tns:IServiceAsepba_ProcesarPuestos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPuestos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarPuestos" message="tns:IServiceAsepba_ConsultarPuestos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarPuestosResponse" message="tns:IServiceAsepba_ConsultarPuestos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTipoLicencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarTipoLicencia" message="tns:IServiceAsepba_ConsultarTipoLicencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarTipoLicenciaResponse" message="tns:IServiceAsepba_ConsultarTipoLicencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarEmpleadoLicencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarEmpleadoLicencia" message="tns:IServiceAsepba_ProcesarEmpleadoLicencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarEmpleadoLicenciaResponse" message="tns:IServiceAsepba_ProcesarEmpleadoLicencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEmpleadoLicencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoLicencia" message="tns:IServiceAsepba_ConsultarEmpleadoLicencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoLicenciaResponse" message="tns:IServiceAsepba_ConsultarEmpleadoLicencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarNacionalidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarNacionalidad" message="tns:IServiceAsepba_ConsultarNacionalidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarNacionalidadResponse" message="tns:IServiceAsepba_ConsultarNacionalidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarNomina">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarNomina" message="tns:IServiceAsepba_ProcesarNomina_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarNominaResponse" message="tns:IServiceAsepba_ProcesarNomina_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarNomina">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarNomina" message="tns:IServiceAsepba_ConsultarNomina_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarNominaResponse" message="tns:IServiceAsepba_ConsultarNomina_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarControlVacacional">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarControlVacacional" message="tns:IServiceAsepba_ProcesarControlVacacional_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarControlVacacionalResponse" message="tns:IServiceAsepba_ProcesarControlVacacional_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarControlVacacional">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarControlVacacional" message="tns:IServiceAsepba_ConsultarControlVacacional_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarControlVacacionalResponse" message="tns:IServiceAsepba_ConsultarControlVacacional_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFormaPago">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarFormaPago" message="tns:IServiceAsepba_ConsultarFormaPago_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarFormaPagoResponse" message="tns:IServiceAsepba_ConsultarFormaPago_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarCapacitacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarCapacitacion" message="tns:IServiceAsepba_ProcesarCapacitacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarCapacitacionResponse" message="tns:IServiceAsepba_ProcesarCapacitacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCapacitacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarCapacitacion" message="tns:IServiceAsepba_ConsultarCapacitacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarCapacitacionResponse" message="tns:IServiceAsepba_ConsultarCapacitacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarEmpleado" message="tns:IServiceAsepba_ProcesarEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarEmpleadoResponse" message="tns:IServiceAsepba_ProcesarEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarEmpleado" message="tns:IServiceAsepba_ConsultarEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoResponse" message="tns:IServiceAsepba_ConsultarEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarAccionDePersonal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarAccionDePersonal" message="tns:IServiceAsepba_ProcesarAccionDePersonal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarAccionDePersonalResponse" message="tns:IServiceAsepba_ProcesarAccionDePersonal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAccionDePersonal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarAccionDePersonal" message="tns:IServiceAsepba_ConsultarAccionDePersonal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarAccionDePersonalResponse" message="tns:IServiceAsepba_ConsultarAccionDePersonal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarNominasHistorico">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarNominasHistorico" message="tns:IServiceAsepba_ProcesarNominasHistorico_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarNominasHistoricoResponse" message="tns:IServiceAsepba_ProcesarNominasHistorico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarNominasHistorico">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarNominasHistorico" message="tns:IServiceAsepba_ConsultarNominasHistorico_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarNominasHistoricoResponse" message="tns:IServiceAsepba_ConsultarNominasHistorico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarEmpleadoConceptoNomina">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarEmpleadoConceptoNomina" message="tns:IServiceAsepba_ProcesarEmpleadoConceptoNomina_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarEmpleadoConceptoNominaResponse" message="tns:IServiceAsepba_ProcesarEmpleadoConceptoNomina_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEmpleadoConceptoNomina">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoConceptoNomina" message="tns:IServiceAsepba_ConsultarEmpleadoConceptoNomina_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoConceptoNominaResponse" message="tns:IServiceAsepba_ConsultarEmpleadoConceptoNomina_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarEmpleadoConcepto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarEmpleadoConcepto" message="tns:IServiceAsepba_ProcesarEmpleadoConcepto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarEmpleadoConceptoResponse" message="tns:IServiceAsepba_ProcesarEmpleadoConcepto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEmpleadoConcepto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoConcepto" message="tns:IServiceAsepba_ConsultarEmpleadoConcepto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoConceptoResponse" message="tns:IServiceAsepba_ConsultarEmpleadoConcepto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarConcepto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarConcepto" message="tns:IServiceAsepba_ProcesarConcepto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarConceptoResponse" message="tns:IServiceAsepba_ProcesarConcepto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConcepto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarConcepto" message="tns:IServiceAsepba_ConsultarConcepto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarConceptoResponse" message="tns:IServiceAsepba_ConsultarConcepto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarConceptoFormula">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarConceptoFormula" message="tns:IServiceAsepba_ProcesarConceptoFormula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarConceptoFormulaResponse" message="tns:IServiceAsepba_ProcesarConceptoFormula_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConceptoFormula">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarConceptoFormula" message="tns:IServiceAsepba_ConsultarConceptoFormula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarConceptoFormulaResponse" message="tns:IServiceAsepba_ConsultarConceptoFormula_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarConceptoLiquidacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarConceptoLiquidacion" message="tns:IServiceAsepba_ProcesarConceptoLiquidacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarConceptoLiquidacionResponse" message="tns:IServiceAsepba_ProcesarConceptoLiquidacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConceptoLiquidacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarConceptoLiquidacion" message="tns:IServiceAsepba_ConsultarConceptoLiquidacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarConceptoLiquidacionResponse" message="tns:IServiceAsepba_ConsultarConceptoLiquidacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarEmpleadoConceptoLiquidacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarEmpleadoConceptoLiquidacion" message="tns:IServiceAsepba_ProcesarEmpleadoConceptoLiquidacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarEmpleadoConceptoLiquidacionResponse" message="tns:IServiceAsepba_ProcesarEmpleadoConceptoLiquidacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEmpleadoConceptoLiquidacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoConceptoLiquidacion" message="tns:IServiceAsepba_ConsultarEmpleadoConceptoLiquidacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoConceptoLiquidacionResponse" message="tns:IServiceAsepba_ConsultarEmpleadoConceptoLiquidacion_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceAsepba" type="tns:IServiceAsepba">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcesarUsuarios">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarUsuarios">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarDepartamentos">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarDepartamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDepartamentos">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarDepartamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarPuestos">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarPuestos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPuestos">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarPuestos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTipoLicencia">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarTipoLicencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarEmpleadoLicencia">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarEmpleadoLicencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEmpleadoLicencia">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoLicencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarNacionalidad">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarNacionalidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarNomina">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarNomina" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarNomina">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarNomina" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarControlVacacional">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarControlVacacional" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarControlVacacional">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarControlVacacional" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFormaPago">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarFormaPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarCapacitacion">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarCapacitacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCapacitacion">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarCapacitacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarAccionDePersonal">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarAccionDePersonal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAccionDePersonal">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarAccionDePersonal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarNominasHistorico">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarNominasHistorico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarNominasHistorico">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarNominasHistorico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarEmpleadoConceptoNomina">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarEmpleadoConceptoNomina" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEmpleadoConceptoNomina">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoConceptoNomina" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarEmpleadoConcepto">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarEmpleadoConcepto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEmpleadoConcepto">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoConcepto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarConcepto">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarConcepto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConcepto">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarConcepto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarConceptoFormula">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarConceptoFormula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConceptoFormula">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarConceptoFormula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarConceptoLiquidacion">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarConceptoLiquidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConceptoLiquidacion">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarConceptoLiquidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarEmpleadoConceptoLiquidacion">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarEmpleadoConceptoLiquidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEmpleadoConceptoLiquidacion">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoConceptoLiquidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceAsepba">
+    <wsdl:port name="BasicHttpBinding_IServiceAsepba" binding="tns:BasicHttpBinding_IServiceAsepba">
+      <soap:address location="http://localhost:60965/ServiceAsepba.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,116 @@
+﻿@model IEnumerable<SISASEPBA.Models.EmpleadoConceptoLiquidacion>
+
+@{
+    ViewBag.Title = "EmpleadoConceptoLiquidacion";
+}
+
+<div class="panel panel-default">
+    <div class="panel panel-heading">
+        <strong>Catálogo empleado conceptos Liquidacion</strong>
+    </div>
+    <div class="panel panel-body">
+
+        <p>
+            @Html.ActionLink("Nuevo empleado concepto Liquidación", "Create", null, new { @class = "btn btn-primary" })
+        </p>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered" id="tablaEmpleadoConceptoLiquidacion">
+                <thead>
+                    <tr>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.IdConceptoLiquidacion)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IdEmpleado)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FechaLiquidacion)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MontoCalculado)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MontoPagar)
+                        </th>
+                         <th>
+                            @Html.DisplayNameFor(model => model.Observaciones)
+                        </th>
+                        <th>
+                            Acción
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdConceptoLiquidacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdEmpleado)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaLiquidacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MontoCalculado)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MontoPagar)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Observaciones)
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new {id=item.IdConceptoLiquidacion, dato=item.IdEmpleado }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //var rowsSelected = [];
+            $('#tablaEmpleadoConceptoLiquidacion').DataTable({
+                "language": {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+
+                }
+
+            });
+        });
+    </script>
+}
+

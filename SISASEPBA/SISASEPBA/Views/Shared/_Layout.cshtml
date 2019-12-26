@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ASEPBA</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("ASEPBA", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                Administración
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Capacitaciones", "Index", "Capacitaciones")</li>
+                                <li>@Html.ActionLink("Control vacacional", "Index", "ControlVacacional")</li>
+                                <li>@Html.ActionLink("Departamentos", "Index", "Departamentos")</li>
+                                <li>@Html.ActionLink("Empleados", "Index", "Empleados")</li>
+                                <li>@Html.ActionLink("Licencias de empleado", "Index", "EmpleadoLicencias")</li>
+                                <li>@Html.ActionLink("Nominas", "Index", "Nominas")</li>
+                                <li>@Html.ActionLink("Puestos", "Index", "Puestos")</li>
+                                <li>@Html.ActionLink("Usuarios", "Index", "Usuarios")</li>
+
+                            </ul>
+                        </li>
+
+                       
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                Procesos
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Acciones de Personal", "Index", "Empleados")</li>
+                                <li>@Html.ActionLink("Nominas", "Index", "Nominas")</li>
+                                <li>@Html.ActionLink("Conceptos", "Index", "Conceptos")</li>
+                                <li>@Html.ActionLink("Conceptos por nómina de empleados ", "Index", "EmpleadoConceptoNomina")</li>
+                                <li>@Html.ActionLink("Conceptos de empleados ", "Index", "EmpleadoConcepto")</li>
+                                <li>@Html.ActionLink("EmpleadoConceptoLiquidacion", "Index", "EmpleadoConceptoLiquidacion")</li>
+                                <li>@Html.ActionLink("Concepto Liquidacion", "IndexConceptoLiquidacion", "Conceptos")</li>
+                                <li>@Html.ActionLink("Concepto Formula", "IndexConceptoFormula", "Conceptos")</li>
+                                <li>@Html.ActionLink("Historicos de nomina", "Index", "NominasHistorico")</li>
+
+                            </ul>
+                        </li>
+                    }
+                
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer class="text-center">
+            <p>&copy; @DateTime.Now.Year - Sistema Gestión de Planillas</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/datatables")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

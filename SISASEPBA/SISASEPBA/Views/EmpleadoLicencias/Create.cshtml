@@ -1,0 +1,62 @@
+﻿@model SISASEPBA.Models.EmpleadoLicencia
+
+@{
+    ViewBag.Title = "Nueva licencia de empleado";
+}
+
+<div class="panel panel-default">
+    <div class="panel panel-heading">
+        <strong>Nueva licencia de empleado</strong>
+    </div>
+    <div class="panel panel-body">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.IdTipoLicencia, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @*@Html.EditorFor(model => model.IdTipoLicencia, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.DropDownList("IdTipoLicencia", new SelectList(ViewBag.ListaDepartamentos, "IdTipoLicencia", "Descripcion"), new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.IdTipoLicencia, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FechaVencimiento, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.FechaVencimiento, new { htmlAttributes = new { @class = "datepicker form-control", @type = "date" } })
+                        @Html.ValidationMessageFor(model => model.FechaVencimiento, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.IdEmpleado, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.HiddenFor(model => model.IdEmpleado, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.IdEmpleado, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Agregar" class="btn btn-success" />
+                        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-danger" })
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

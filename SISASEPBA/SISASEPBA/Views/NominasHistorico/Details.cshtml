@@ -1,0 +1,124 @@
+﻿@model SISASEPBA.Models.NominasHistorico
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="panel panel-default">
+    <div class="panel panel-heading">
+        <strong>Historico de nominas</strong>
+    </div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdNomina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdNomina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Consecutivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Consecutivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaFin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaFin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Periodo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Periodo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaPago)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaPago)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCalculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCalculo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioAprobacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioAprobacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaAprobacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaAprobacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioAplicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioAplicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaAplicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaAplicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioCreacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCreacion)
+        </dd>
+
+
+    </dl>
+</div>
+<div class="col-md-offset-2 col-md-10">
+    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-success" })
+</div>
+              

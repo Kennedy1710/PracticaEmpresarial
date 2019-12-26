@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\SISASEPBA",
+    "\\SISASEPBA\\Controllers",
+    "\\SISASEPBA\\Models",
+    "\\SISASEPBA\\Views",
+    "\\SISASEPBA\\Views\\ControlVacacional",
+    "\\SISASEPBA\\Views\\Departamentos",
+    "\\SISASEPBA\\Views\\Empleados",
+    "\\SISASEPBA\\Views\\Nominas",
+    "\\SISASEPBA\\Views\\Shared"
+  ],
+  "SelectedNode": "\\SISASEPBA\\Controllers\\ConceptosController.cs",
+  "PreviewInSolutionExplorer": false
+}
