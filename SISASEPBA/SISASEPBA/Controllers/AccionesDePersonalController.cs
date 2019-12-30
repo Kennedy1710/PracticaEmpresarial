@@ -281,6 +281,7 @@ namespace SISASEPBA.Controllers
                     EmpleadoSegundoNombre = accion.EmpleadoSegundoNombre,
                     EmpleadoPrimerApellido = accion.EmpleadoPrimerApellido,
                     EmpleadoSegundoApellido = accion.EmpleadoSegundoApellido,
+                    ObservacionesAP = accion.ObservacionesAP,
                     UsuarioCreacion = User.Identity.Name,
                     FechaCreacion = DateTime.Now,
                     UsuarioModificacion = User.Identity.Name,

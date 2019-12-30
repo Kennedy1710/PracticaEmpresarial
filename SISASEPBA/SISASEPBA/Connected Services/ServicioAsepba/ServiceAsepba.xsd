@@ -438,7 +438,7 @@
   <xs:complexType name="Capacitacion">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
-      <xs:element minOccurs="1" maxOccurs="1" name="IdRegistro" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCapacitacionEmpleado" type="xs:int" />
       <xs:element minOccurs="1" maxOccurs="1" name="IdTipoCapacitacion" type="xs:int" />
       <xs:element minOccurs="1" maxOccurs="1" name="FechaRegistro" type="xs:dateTime" />
       <xs:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="xs:dateTime" />
@@ -446,12 +446,15 @@
       <xs:element minOccurs="1" maxOccurs="1" name="CantidadHoras" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="1" name="NombreCapacitacion" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="NombreDelCapacitador" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PrimerNombreDelCapacitador" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SegundoNombreDelCapacitador" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PrimerApellidoDelCapacitador" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SegundoApellidoDelCapacitador" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="EmpresaCapacitadora" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Formato" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Origen" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="CargoPagoCapacitacion" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="DocumentoAdjunto" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DocumentoAdjunto" type="xs:base64Binary" />
       <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
       <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
       <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
@@ -476,6 +479,40 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" maxOccurs="1" name="ConsultarCapacitacionResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarTipoCapacitacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TipoCapacitacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TipoCapacitacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoCapacitacion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Alias" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultarTipoCapacitacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarTipoCapacitacionResult">
           <xs:complexType>
             <xs:sequence>
               <xs:element ref="xs:schema" />

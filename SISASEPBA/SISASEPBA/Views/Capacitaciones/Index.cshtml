@@ -1,141 +1,68 @@
-﻿@model IEnumerable<SISASEPBA.ServicioAsepba.Capacitacion>
+﻿@model IEnumerable<SISASEPBA.Models.Capacitacion>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="panel panel-default">
+    <div class="panel panel-heading">
+        <strong>Capacitaciones</strong>
+    </div>
+    <div class="panel panel-body">
+        <p>
+            @Html.ActionLink("Ingresar capacitación", "Create", null, new { @class = "btn btn-primary" })
+        </p> <br />
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Accion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IdRegistro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IdTipoCapacitacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaRegistro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaInicio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaFinalizacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CantidadHoras)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NombreCapacitacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NombreDelCapacitador)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EmpresaCapacitadora)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Formato)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CargoPagoCapacitacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DocumentoAdjunto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UsuarioCreacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaCreacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UsuarioModificacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaModificacion)
-        </th>
-        <th></th>
-    </tr>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IdTipoCapacitacion)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NombreCapacitacion)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmpresaCapacitadora)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Estado)
+                        </th>
+                        <th>
+                            Acción
+                        </th>
+                    </tr>
+                </thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Accion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdRegistro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdTipoCapacitacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaRegistro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaInicio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaFinalizacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CantidadHoras)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NombreCapacitacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NombreDelCapacitador)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EmpresaCapacitadora)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Formato)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CargoPagoCapacitacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Estado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DocumentoAdjunto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UsuarioCreacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaCreacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UsuarioModificacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaModificacion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IdTipoCapacitacion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NombreCapacitacion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmpresaCapacitadora)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Estado)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id=item.IdCapacitacionEmpleado }, new { @class = "btn btn-danger"})
+                            </td>
+                        </tr>
+                    }
+                </tbody>
 
-</table>
+
+
+            </table>
+
+        </div>
+
+    </div>
+</div>

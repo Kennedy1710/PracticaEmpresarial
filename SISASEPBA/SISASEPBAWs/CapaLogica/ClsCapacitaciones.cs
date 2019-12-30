@@ -13,6 +13,7 @@ namespace SISASEPBAWs.CapaLogica
 
         #region Constantes
         private const string SpConexion = "SP_Capacitaciones";
+        private const string SpConexion2 = "SP_Tipo_Capacitaciones";
         private static string _mensaje;
         #endregion 
 
@@ -43,7 +44,7 @@ namespace SISASEPBAWs.CapaLogica
                     comando.CommandText = SpConexion;
 
                     comando.Parameters.AddWithValue("@@Accion", obj.Accion);
-                    comando.Parameters.AddWithValue("@@IdRegistro", obj.IdRegistro);
+                    comando.Parameters.AddWithValue("@@IdCapacitacionEmpleado", obj.IdCapacitacionEmpleado);
                     comando.Parameters.AddWithValue("@@IdTipoCapacitacion", obj.IdTipoCapacitacion);
                     comando.Parameters.AddWithValue("@@FechaRegistro", obj.FechaRegistro);
                     comando.Parameters.AddWithValue("@@FechaInicio", obj.FechaInicio);
@@ -52,7 +53,7 @@ namespace SISASEPBAWs.CapaLogica
                     comando.Parameters.AddWithValue("@@Descripcion", obj.Descripcion);
                     comando.Parameters.AddWithValue("@@NombreCapacitacion", obj.NombreCapacitacion);
                     comando.Parameters.AddWithValue("@@EmpresaCapacitadora", obj.EmpresaCapacitadora);
-                    comando.Parameters.AddWithValue("@@Formato", obj.Formato);
+                    comando.Parameters.AddWithValue("@@Origen", obj.Origen);
                     comando.Parameters.AddWithValue("@@CargoPagoCapacitacion", obj.CargoPagoCapacitacion);
                     comando.Parameters.AddWithValue("@@Estado", obj.Estado);
                     comando.Parameters.AddWithValue("@@DocumentoAdjunto", obj.DocumentoAdjunto);
@@ -115,7 +116,7 @@ namespace SISASEPBAWs.CapaLogica
                     comando.Connection = _conexion;
                     comando.CommandText = SpConexion;
                     comando.Parameters.AddWithValue("@@Accion", obj.Accion);
-                    comando.Parameters.AddWithValue("@@IdRegistro", obj.IdRegistro);
+                    comando.Parameters.AddWithValue("@@IdCapacitacionEmpleado", obj.IdCapacitacionEmpleado);
                     comando.Parameters.AddWithValue("@@IdTipoCapacitacion", obj.IdTipoCapacitacion);
                     comando.Parameters.AddWithValue("@@FechaRegistro", obj.FechaRegistro);
                     comando.Parameters.AddWithValue("@@FechaInicio", obj.FechaInicio);
@@ -124,10 +125,56 @@ namespace SISASEPBAWs.CapaLogica
                     comando.Parameters.AddWithValue("@@Descripcion", obj.Descripcion);
                     comando.Parameters.AddWithValue("@@NombreCapacitacion", obj.NombreCapacitacion);
                     comando.Parameters.AddWithValue("@@EmpresaCapacitadora", obj.EmpresaCapacitadora);
-                    comando.Parameters.AddWithValue("@@Formato", obj.Formato);
+                    comando.Parameters.AddWithValue("@@Origen", obj.Origen);
                     comando.Parameters.AddWithValue("@@CargoPagoCapacitacion", obj.CargoPagoCapacitacion);
                     comando.Parameters.AddWithValue("@@Estado", obj.Estado);
                     comando.Parameters.AddWithValue("@@DocumentoAdjunto", obj.DocumentoAdjunto);
+                    comando.Parameters.AddWithValue("@@UsuarioCreacion", obj.UsuarioCreacion);
+                    comando.Parameters.AddWithValue("@@FechaCreacion", obj.FechaCreacion);
+                    comando.Parameters.AddWithValue("@@UsuarioModificacion", obj.UsuarioModificacion);
+                    comando.Parameters.AddWithValue("@@FechaModificacion", obj.FechaModificacion);
+
+                    var resultado = AccesoDatos.LlenarDataTable(comando, ref _mensaje);
+                    var ds = new DataSet();
+                    ds.Tables.Add(resultado.Copy());
+                    return ds;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                _mensaje = ex.Message;
+                return null;
+            }
+            finally
+            {
+                AccesoDatos.Desconectar(_conexion, ref _mensaje);
+            }
+        }
+
+
+        public static DataSet ConsultarTipoCapacitacion(TipoCapacitacion obj)
+        {
+            try
+            {
+                var comando = new SqlCommand();
+                _conexion = AccesoDatos.Validar_Conexion("SisAsepba", ref _mensaje);
+                if (_conexion == null)
+                {
+                    _mensaje = "Error al encontrar la conexion proporcionada";
+                    return null;
+                }
+                else
+                {
+                    AccesoDatos.Conectar(_conexion, ref _mensaje);
+
+                    comando.Connection = _conexion;
+                    comando.CommandText = SpConexion2;
+                    comando.Parameters.AddWithValue("@@Accion", obj.Accion);
+                    comando.Parameters.AddWithValue("@@IdTipoCapacitacion", obj.IdTipoCapacitacion);
+                    comando.Parameters.AddWithValue("@@Alias", obj.Alias);
+                    comando.Parameters.AddWithValue("@@Descripcion", obj.Descripcion);
+                    comando.Parameters.AddWithValue("@@Estado", obj.Estado);
                     comando.Parameters.AddWithValue("@@UsuarioCreacion", obj.UsuarioCreacion);
                     comando.Parameters.AddWithValue("@@FechaCreacion", obj.FechaCreacion);
                     comando.Parameters.AddWithValue("@@UsuarioModificacion", obj.UsuarioModificacion);

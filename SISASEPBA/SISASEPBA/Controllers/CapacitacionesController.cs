@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data;
 using SISASEPBA.ServicioAsepba;
+using System.IO;
 
 namespace SISASEPBA.Controllers
 {
@@ -12,6 +13,28 @@ namespace SISASEPBA.Controllers
     {
         private readonly ServicioAsepba.ServiceAsepbaClient _servicio = new ServiceAsepbaClient();
         // GET: Capacitaciones
+
+        public List<Models.TipoCapacitaciones> TipoCapacitaciones()
+        {
+            var dt = _servicio.ConsultarTipoCapacitacion(new TipoCapacitacion
+            {
+                Accion = "CONSULTAR",
+                FechaCreacion = DateTime.Now,
+                FechaModificacion = DateTime.Now
+            });
+
+            var list = dt.Tables[0].AsEnumerable().Select(dataRow => new Models.TipoCapacitaciones
+            {
+                IdTipoCapacitacion = dataRow.Field<int>("IDTIPOCAPACITACION"),
+                Alias = dataRow.Field<string>("ALIAS"),
+                Descripcion = dataRow.Field<string>("DESCRIPCION"),
+                Estado = dataRow.Field<string>("ESTADO"),
+
+            }).ToList();
+
+            return list;
+        }
+
         public ActionResult Index()
         {
 
@@ -19,17 +42,21 @@ namespace SISASEPBA.Controllers
             {
                 Accion = "CONSULTAR",
                 FechaCreacion = DateTime.Now,
-                FechaModificacion = DateTime.Now
+                FechaModificacion = DateTime.Now,
+                FechaInicio = DateTime.Now,
+                FechaRegistro = DateTime.Now,
+                FechaFinalizacion = DateTime.Now
+                
             });
 
 
-            var usr = dt.Tables[0].AsEnumerable().Select(dataRow => new Models.Puesto
+            var usr = dt.Tables[0].AsEnumerable().Select(dataRow => new Models.Capacitacion
             {
-                IdPuesto = dataRow.Field<int>("IDPUESTO"),
-                IdDepartamento = dataRow.Field<string>("DEPARTAMENTO"),
-                Alias = dataRow.Field<string>("ALIAS"),
-                Descripcion = dataRow.Field<string>("DESCRIPCION"),
-                Estado = dataRow.Field<bool>("ESTADO"),
+                IdCapacitacionEmpleado = dataRow.Field<int>("IDCAPACITACIONEMPLEADO"),
+                IdTipoCapacitacion = dataRow.Field<string>("TIPOCAPACITACION"),
+                EmpresaCapacitadora = dataRow.Field<string>("EMPRESACAPACITADORA"),
+                NombreCapacitacion = dataRow.Field<string>("NOMBRECAPACITACION"),
+                Estado = dataRow.Field<string>("ESTADO")
 
             }).ToList();
 
@@ -45,18 +72,64 @@ namespace SISASEPBA.Controllers
         // GET: Capacitaciones/Create
         public ActionResult Create()
         {
+            ViewBag.TipoCapacitacion = TipoCapacitaciones();
+
             return View();
         }
 
         // POST: Capacitaciones/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Capacitacion capacitacion, HttpPostedFileBase doc)
         {
+
+            if (doc != null && doc.ContentLength > 0)
+            {
+                byte[] file = null;
+                using (var archivo = new BinaryReader(doc.InputStream))
+                {
+                    file = archivo.ReadBytes(doc.ContentLength);
+                }
+
+                capacitacion.DocumentoAdjunto = file;
+            }
+
             try
             {
-                // TODO: Add insert logic here
+                var objeto = new Capacitacion
+                {
+                    Accion = "INSERTAR",
+                    IdTipoCapacitacion = capacitacion.IdTipoCapacitacion,
+                    FechaRegistro = capacitacion.FechaRegistro,
+                    FechaInicio = capacitacion.FechaInicio,
+                    FechaFinalizacion = capacitacion.FechaFinalizacion,
+                    CantidadHoras = capacitacion.CantidadHoras,
+                    NombreCapacitacion = capacitacion.NombreCapacitacion,
+                    Descripcion = capacitacion.Descripcion,
+                    PrimerNombreDelCapacitador = capacitacion.PrimerNombreDelCapacitador,
+                    SegundoNombreDelCapacitador = capacitacion.SegundoNombreDelCapacitador,
+                    PrimerApellidoDelCapacitador = capacitacion.PrimerApellidoDelCapacitador,
+                    SegundoApellidoDelCapacitador = capacitacion.SegundoApellidoDelCapacitador,
+                    EmpresaCapacitadora = capacitacion.EmpresaCapacitadora,
+                    Origen = capacitacion.Origen,
+                    CargoPagoCapacitacion = capacitacion.CargoPagoCapacitacion,
+                    Estado = "PLANEADA",
+                    DocumentoAdjunto = capacitacion.DocumentoAdjunto,
+                    UsuarioCreacion = User.Identity.Name,
+                    FechaCreacion = DateTime.Now,
+                    UsuarioModificacion = User.Identity.Name,
+                    FechaModificacion = DateTime.Now
+                };
 
-                return RedirectToAction("Index");
+                var dt = _servicio.ProcesarCapacitacion(objeto);
+
+                if (dt.IsSuccess)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View("Create");
+                }
             }
             catch
             {

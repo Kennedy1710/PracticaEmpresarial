@@ -293,6 +293,19 @@ namespace SISASEPBAWs
         }
 
         [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
+        public DataSet ConsultarTipoCapacitacion(TipoCapacitacion obj)
+        {
+            try
+            {
+                return ClsCapacitaciones.ConsultarTipoCapacitacion(obj);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
         public Response ProcesarEmpleado(Empleado obj)
         {
             try

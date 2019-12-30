@@ -113,6 +113,12 @@
   <wsdl:message name="IServiceAsepba_ConsultarCapacitacion_OutputMessage">
     <wsdl:part name="parameters" element="tns:ConsultarCapacitacionResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarTipoCapacitacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarTipoCapacitacion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarTipoCapacitacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarTipoCapacitacionResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceAsepba_ProcesarEmpleado_InputMessage">
     <wsdl:part name="parameters" element="tns:ProcesarEmpleado" />
   </wsdl:message>
@@ -293,6 +299,10 @@
     <wsdl:operation name="ConsultarCapacitacion">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarCapacitacion" message="tns:IServiceAsepba_ConsultarCapacitacion_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarCapacitacionResponse" message="tns:IServiceAsepba_ConsultarCapacitacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTipoCapacitacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarTipoCapacitacion" message="tns:IServiceAsepba_ConsultarTipoCapacitacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarTipoCapacitacionResponse" message="tns:IServiceAsepba_ConsultarTipoCapacitacion_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ProcesarEmpleado">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarEmpleado" message="tns:IServiceAsepba_ProcesarEmpleado_InputMessage" />
@@ -524,6 +534,15 @@
     </wsdl:operation>
     <wsdl:operation name="ConsultarCapacitacion">
       <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarCapacitacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTipoCapacitacion">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarTipoCapacitacion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -215,6 +215,7 @@
     <Compile Include="Models\APPermisosConYSinGoceDeSalario.cs" />
     <Compile Include="Models\APSuspencion.cs" />
     <Compile Include="Models\APVacaccionesDisfrutadasYAcumuladas.cs" />
+    <Compile Include="Models\Capacitacion.cs" />
     <Compile Include="Models\ConceptoFormula.cs" />
     <Compile Include="Models\ConceptoLiquidacion.cs" />
     <Compile Include="Models\Conceptos.cs" />
@@ -232,6 +233,7 @@
     <Compile Include="Models\Nomina.cs" />
     <Compile Include="Models\NominasHistorico.cs" />
     <Compile Include="Models\Puesto.cs" />
+    <Compile Include="Models\TipoCapacitaciones.cs" />
     <Compile Include="Models\TipoLicencias.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -587,7 +589,6 @@
     <Content Include="Views\AccionesDePersonal\APLiquidacionPorPension.cshtml" />
     <Content Include="Views\AccionesDePersonal\APLiquidacionPorRenuncia.cshtml" />
     <Content Include="Views\AccionesDePersonal\APCambioDePorcentajeDeAhorros.cshtml" />
-    <Content Include="Views\Capacitaciones\Index.cshtml" />
     <Content Include="Views\Conceptos\Create.cshtml" />
     <Content Include="Views\Conceptos\CreateConceptoFormula.cshtml" />
     <Content Include="Views\Conceptos\CreateConceptoLiquidacion.cshtml" />
@@ -608,6 +609,8 @@
     <Content Include="Views\EmpleadoConceptoNomina\Index.cshtml" />
     <Content Include="Views\NominasHistorico\Details.cshtml" />
     <Content Include="Views\NominasHistorico\Index.cshtml" />
+    <Content Include="Views\Capacitaciones\Index.cshtml" />
+    <Content Include="Views\Capacitaciones\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -142,6 +142,13 @@ namespace SISASEPBA.ServicioAsepba {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ConsultarCapacitacion", ReplyAction="http://tempuri.org/IServiceAsepba/ConsultarCapacitacionResponse")]
         System.Threading.Tasks.Task<System.Data.DataSet> ConsultarCapacitacionAsync(SISASEPBA.ServicioAsepba.Capacitacion obj);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ConsultarTipoCapacitacion", ReplyAction="http://tempuri.org/IServiceAsepba/ConsultarTipoCapacitacionResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ConsultarTipoCapacitacion(SISASEPBA.ServicioAsepba.TipoCapacitacion obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ConsultarTipoCapacitacion", ReplyAction="http://tempuri.org/IServiceAsepba/ConsultarTipoCapacitacionResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> ConsultarTipoCapacitacionAsync(SISASEPBA.ServicioAsepba.TipoCapacitacion obj);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ProcesarEmpleado", ReplyAction="http://tempuri.org/IServiceAsepba/ProcesarEmpleadoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         SISASEPBA.ServicioAsepba.Response ProcesarEmpleado(SISASEPBA.ServicioAsepba.Empleado obj);
@@ -3479,37 +3486,17 @@ namespace SISASEPBA.ServicioAsepba {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Capacitacion : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class TipoCapacitacion : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string accionField;
         
-        private int idRegistroField;
-        
         private int idTipoCapacitacionField;
         
-        private System.DateTime fechaRegistroField;
-        
-        private System.DateTime fechaInicioField;
-        
-        private System.DateTime fechaFinalizacionField;
-        
-        private int cantidadHorasField;
-        
-        private string nombreCapacitacionField;
+        private string aliasField;
         
         private string descripcionField;
         
-        private string nombreDelCapacitadorField;
-        
-        private string empresaCapacitadoraField;
-        
-        private string formatoField;
-        
-        private string cargoPagoCapacitacionField;
-        
         private string estadoField;
-        
-        private string documentoAdjuntoField;
         
         private string usuarioCreacionField;
         
@@ -3533,13 +3520,183 @@ namespace SISASEPBA.ServicioAsepba {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public int IdRegistro {
+        public int IdTipoCapacitacion {
             get {
-                return this.idRegistroField;
+                return this.idTipoCapacitacionField;
             }
             set {
-                this.idRegistroField = value;
-                this.RaisePropertyChanged("IdRegistro");
+                this.idTipoCapacitacionField = value;
+                this.RaisePropertyChanged("IdTipoCapacitacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Alias {
+            get {
+                return this.aliasField;
+            }
+            set {
+                this.aliasField = value;
+                this.RaisePropertyChanged("Alias");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Descripcion {
+            get {
+                return this.descripcionField;
+            }
+            set {
+                this.descripcionField = value;
+                this.RaisePropertyChanged("Descripcion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string Estado {
+            get {
+                return this.estadoField;
+            }
+            set {
+                this.estadoField = value;
+                this.RaisePropertyChanged("Estado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string UsuarioCreacion {
+            get {
+                return this.usuarioCreacionField;
+            }
+            set {
+                this.usuarioCreacionField = value;
+                this.RaisePropertyChanged("UsuarioCreacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public System.DateTime FechaCreacion {
+            get {
+                return this.fechaCreacionField;
+            }
+            set {
+                this.fechaCreacionField = value;
+                this.RaisePropertyChanged("FechaCreacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string UsuarioModificacion {
+            get {
+                return this.usuarioModificacionField;
+            }
+            set {
+                this.usuarioModificacionField = value;
+                this.RaisePropertyChanged("UsuarioModificacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public System.DateTime FechaModificacion {
+            get {
+                return this.fechaModificacionField;
+            }
+            set {
+                this.fechaModificacionField = value;
+                this.RaisePropertyChanged("FechaModificacion");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Capacitacion : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string accionField;
+        
+        private int idCapacitacionEmpleadoField;
+        
+        private int idTipoCapacitacionField;
+        
+        private System.DateTime fechaRegistroField;
+        
+        private System.DateTime fechaInicioField;
+        
+        private System.DateTime fechaFinalizacionField;
+        
+        private int cantidadHorasField;
+        
+        private string nombreCapacitacionField;
+        
+        private string descripcionField;
+        
+        private string primerNombreDelCapacitadorField;
+        
+        private string segundoNombreDelCapacitadorField;
+        
+        private string primerApellidoDelCapacitadorField;
+        
+        private string segundoApellidoDelCapacitadorField;
+        
+        private string empresaCapacitadoraField;
+        
+        private string origenField;
+        
+        private string cargoPagoCapacitacionField;
+        
+        private string estadoField;
+        
+        private byte[] documentoAdjuntoField;
+        
+        private string usuarioCreacionField;
+        
+        private System.DateTime fechaCreacionField;
+        
+        private string usuarioModificacionField;
+        
+        private System.DateTime fechaModificacionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Accion {
+            get {
+                return this.accionField;
+            }
+            set {
+                this.accionField = value;
+                this.RaisePropertyChanged("Accion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int IdCapacitacionEmpleado {
+            get {
+                return this.idCapacitacionEmpleadoField;
+            }
+            set {
+                this.idCapacitacionEmpleadoField = value;
+                this.RaisePropertyChanged("IdCapacitacionEmpleado");
             }
         }
         
@@ -3629,18 +3786,54 @@ namespace SISASEPBA.ServicioAsepba {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public string NombreDelCapacitador {
+        public string PrimerNombreDelCapacitador {
             get {
-                return this.nombreDelCapacitadorField;
+                return this.primerNombreDelCapacitadorField;
             }
             set {
-                this.nombreDelCapacitadorField = value;
-                this.RaisePropertyChanged("NombreDelCapacitador");
+                this.primerNombreDelCapacitadorField = value;
+                this.RaisePropertyChanged("PrimerNombreDelCapacitador");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string SegundoNombreDelCapacitador {
+            get {
+                return this.segundoNombreDelCapacitadorField;
+            }
+            set {
+                this.segundoNombreDelCapacitadorField = value;
+                this.RaisePropertyChanged("SegundoNombreDelCapacitador");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string PrimerApellidoDelCapacitador {
+            get {
+                return this.primerApellidoDelCapacitadorField;
+            }
+            set {
+                this.primerApellidoDelCapacitadorField = value;
+                this.RaisePropertyChanged("PrimerApellidoDelCapacitador");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string SegundoApellidoDelCapacitador {
+            get {
+                return this.segundoApellidoDelCapacitadorField;
+            }
+            set {
+                this.segundoApellidoDelCapacitadorField = value;
+                this.RaisePropertyChanged("SegundoApellidoDelCapacitador");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public string EmpresaCapacitadora {
             get {
                 return this.empresaCapacitadoraField;
@@ -3652,19 +3845,19 @@ namespace SISASEPBA.ServicioAsepba {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
-        public string Formato {
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string Origen {
             get {
-                return this.formatoField;
+                return this.origenField;
             }
             set {
-                this.formatoField = value;
-                this.RaisePropertyChanged("Formato");
+                this.origenField = value;
+                this.RaisePropertyChanged("Origen");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
         public string CargoPagoCapacitacion {
             get {
                 return this.cargoPagoCapacitacionField;
@@ -3676,7 +3869,7 @@ namespace SISASEPBA.ServicioAsepba {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
         public string Estado {
             get {
                 return this.estadoField;
@@ -3688,8 +3881,8 @@ namespace SISASEPBA.ServicioAsepba {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
-        public string DocumentoAdjunto {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=17)]
+        public byte[] DocumentoAdjunto {
             get {
                 return this.documentoAdjuntoField;
             }
@@ -3700,7 +3893,7 @@ namespace SISASEPBA.ServicioAsepba {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
         public string UsuarioCreacion {
             get {
                 return this.usuarioCreacionField;
@@ -3712,7 +3905,7 @@ namespace SISASEPBA.ServicioAsepba {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
         public System.DateTime FechaCreacion {
             get {
                 return this.fechaCreacionField;
@@ -3724,7 +3917,7 @@ namespace SISASEPBA.ServicioAsepba {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
         public string UsuarioModificacion {
             get {
                 return this.usuarioModificacionField;
@@ -3736,7 +3929,7 @@ namespace SISASEPBA.ServicioAsepba {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
         public System.DateTime FechaModificacion {
             get {
                 return this.fechaModificacionField;
@@ -5292,6 +5485,14 @@ namespace SISASEPBA.ServicioAsepba {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> ConsultarCapacitacionAsync(SISASEPBA.ServicioAsepba.Capacitacion obj) {
             return base.Channel.ConsultarCapacitacionAsync(obj);
+        }
+        
+        public System.Data.DataSet ConsultarTipoCapacitacion(SISASEPBA.ServicioAsepba.TipoCapacitacion obj) {
+            return base.Channel.ConsultarTipoCapacitacion(obj);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> ConsultarTipoCapacitacionAsync(SISASEPBA.ServicioAsepba.TipoCapacitacion obj) {
+            return base.Channel.ConsultarTipoCapacitacionAsync(obj);
         }
         
         public SISASEPBA.ServicioAsepba.Response ProcesarEmpleado(SISASEPBA.ServicioAsepba.Empleado obj) {

@@ -93,6 +93,14 @@ namespace SISASEPBAWs
         [TransactionFlow(TransactionFlowOption.Allowed)]
         DataSet ConsultarCapacitacion(Capacitacion obj);
 
+        //[OperationContract]
+        //[TransactionFlow(TransactionFlowOption.Allowed)]
+        //Response ProcesarTipoCapacitacion(TipoCapacitacion obj);
+
+        [OperationContract]
+        [TransactionFlow(TransactionFlowOption.Allowed)]
+        DataSet ConsultarTipoCapacitacion(TipoCapacitacion obj);
+
         [OperationContract]
         [TransactionFlow(TransactionFlowOption.Allowed)]
         Response ProcesarEmpleado(Empleado obj);
@@ -442,9 +450,9 @@ namespace SISASEPBAWs
     {
         [DataMember]
         public string Accion { get; set; } = string.Empty;
-        
+
         [DataMember]
-        public int IdRegistro { get; set; } = 0;
+        public int IdCapacitacionEmpleado { get; set; } = 0;
 
         [DataMember]
         public int IdTipoCapacitacion { get; set; } = 0;
@@ -468,13 +476,22 @@ namespace SISASEPBAWs
         public string Descripcion { get; set; } =string.Empty;
 
         [DataMember]
-        public string NombreDelCapacitador { get; set; } = string.Empty;
+        public string PrimerNombreDelCapacitador { get; set; } = string.Empty;
+
+        [DataMember]
+        public string SegundoNombreDelCapacitador { get; set; } = string.Empty;
+
+        [DataMember]
+        public string PrimerApellidoDelCapacitador { get; set; } = string.Empty;
+
+        [DataMember]
+        public string SegundoApellidoDelCapacitador { get; set; } = string.Empty;
 
         [DataMember]
         public string EmpresaCapacitadora { get; set; } = string.Empty;
 
         [DataMember]
-        public string Formato { get; set; } = string.Empty;
+        public string Origen { get; set; } = string.Empty;
 
         [DataMember]
         public string CargoPagoCapacitacion { get; set; } = string.Empty;
@@ -483,7 +500,36 @@ namespace SISASEPBAWs
         public string Estado { get; set; } = string.Empty;
 
         [DataMember]
-        public string DocumentoAdjunto { get; set; } = string.Empty;
+        public byte[] DocumentoAdjunto { get; set; } = null;
+
+        [DataMember]
+        public string UsuarioCreacion { get; set; } = string.Empty;
+        [DataMember]
+        public DateTime FechaCreacion { get; set; } = DateTime.Now;
+        [DataMember]
+        public string UsuarioModificacion { get; set; } = string.Empty;
+        [DataMember]
+        public DateTime FechaModificacion { get; set; } = DateTime.Now;
+
+    }
+
+    [DataContract]
+    public class TipoCapacitacion
+    {
+        [DataMember]
+        public string Accion { get; set; } = string.Empty;
+
+        [DataMember]
+        public int IdTipoCapacitacion { get; set; } = 0;
+
+        [DataMember]
+        public string Alias { get; set; } = string.Empty;
+
+        [DataMember]
+        public string Descripcion { get; set; } = string.Empty;
+
+        [DataMember]
+        public string Estado { get; set; } = string.Empty;
 
         [DataMember]
         public string UsuarioCreacion { get; set; } = string.Empty;
