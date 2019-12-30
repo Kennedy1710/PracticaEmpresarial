@@ -38,6 +38,43 @@ namespace SISASEPBA.Controllers
             return View();
         }
 
+        public List<Models.Empleado> GetEmpleado()
+        {
+            var dt = _servicio.ConsultarEmpleado(new Empleado
+            {
+                Accion = "CONSULTAR",
+                FechaCreacion = DateTime.Now,
+                FechaModificacion = DateTime.Now,
+                FechaNacimiento = DateTime.Now,
+                FechaIngreso = DateTime.Now,
+                FechaSalida = DateTime.Now,
+                UltimoCambioVac = DateTime.Now
+            });
+
+            var list = dt.Tables[0].AsEnumerable().Select(dataRow => new Models.Empleado
+            {
+                IdEmpleado = dataRow.Field<int>("IDEMPLEADO"),
+                IdNacionalidad = dataRow.Field<string>("NACIONALIDAD"),
+                IdDepartamento = dataRow.Field<string>("DEPARTAMENTO"),
+                IdPuesto = dataRow.Field<string>("PUESTO"),
+                IdNomina = dataRow.Field<string>("NOMINA"),
+                IdFormaPago = dataRow.Field<string>("FORMAPAGO"),
+                IdRegimenVacacional = dataRow.Field<string>("CONTROLVACACIONAL"),
+                CodigoEmpleado = dataRow.Field<string>("CODIGOEMPLEADO"),
+                PrimerNombre = dataRow.Field<string>("PRIMERNOMBRE"),
+                SegundoNombre = dataRow.Field<string>("SEGUNDONOMBRE"),
+                PrimerApellido = dataRow.Field<string>("PRIMERAPELLIDO"),
+                SegundoApellido = dataRow.Field<string>("SEGUNDOAPELLIDO"),
+                Estado = dataRow.Field<string>("ESTADO"),
+                NumeroIdentificacion = dataRow.Field<int>("NUMEROIDENTIFICACION"),
+                CorreoElectronico = dataRow.Field<string>("CORREOELECTRONICO"),
+                TelefonoPrincipal = dataRow.Field<string>("TELEFONOPRINCIPAL")
+
+            }).ToList();
+
+            return list;
+        }
+
         public List<Models.TipoLicencias> GetTipoLicencias()
         {
             var dt = _servicio.ConsultarTipoLicencia(new TipoLicencia
@@ -63,6 +100,7 @@ namespace SISASEPBA.Controllers
         public ActionResult Create()
         {
             ViewBag.ListaDepartamentos = GetTipoLicencias();
+            ViewBag.Empleados = GetEmpleado();
             return View();
         }
 
