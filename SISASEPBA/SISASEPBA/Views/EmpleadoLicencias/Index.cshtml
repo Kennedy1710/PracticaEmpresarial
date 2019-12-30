@@ -6,62 +6,67 @@
 
 <div class="panel panel-default">
     <div class="panel panel-heading">
-        <strong>Catálogo licencias de empleado</strong>
+        <strong>Catálogo conceptos</strong>
     </div>
     <div class="panel panel-body">
 
         <p>
-            @Html.ActionLink("Nueva licencia de empleado", "Create", null, new { @class = "btn btn-primary"})
+            @Html.ActionLink("Nueva licencia de empleado", "Create", null, new { @class = "btn btn-primary" })
         </p>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.IdEmpleado)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.IdTipoLicencia)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FechaVencimiento)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Estado)
-                </th>
-                <th>
-                    Acción
-                </th>
-            </tr>
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IdEmpleado)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IdTipoLicencia)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.FechaVencimiento)
-                    </td>
-                    <td>
-                        @if (item.Estado == true)
-                        {
-                            <p style="color: green">ACTIVO</p>
-                        }
-                        else
-                        {
-                            <p style="color: red">INACTIVO</p>
-                        }
-                        @*@Html.DisplayFor(modelItem => item.Estado)*@
-                    </td>
-                    <td>
-                        @Html.ActionLink("Editar", "Edit", new { id=item.IdEmpleadoLicencia }, new { @class = "btn btn-danger"}) 
-                    </td>
-                </tr>
-            }
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered" id="tablaLicencia">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IdEmpleado)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IdTipoLicencia)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FechaVencimiento)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Estado)
+                        </th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
 
-        </table>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IdEmpleado)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IdTipoLicencia)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FechaVencimiento)
+                            </td>
+                            <td>
+                                @if (item.Estado == true)
+                                {
+                                    <p style="color: green">ACTIVO</p>
+                                }
+                                else
+                                {
+                                    <p style="color: red">INACTIVO</p>
+                                }
+                                @*@Html.DisplayFor(modelItem => item.Estado)*@
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.IdEmpleadoLicencia }, new { @class = "btn btn-danger" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
 
     </div>
 </div>
@@ -70,7 +75,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             //var rowsSelected = [];
-            $('#tablaDepartamentos').DataTable({
+            $('#tablaLicencia').DataTable({
                 "language": {
                     "sProcessing": "Procesando...",
                     "sLengthMenu": "Mostrar _MENU_ registros",

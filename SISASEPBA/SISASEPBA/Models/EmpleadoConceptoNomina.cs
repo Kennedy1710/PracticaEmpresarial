@@ -13,16 +13,23 @@ namespace SISASEPBA.Models
         public string Accion { get; set; } = string.Empty;
 
         [DisplayName("Empleado")]
+        [Required(ErrorMessage = "*Campo requerido.")]
         public int IdEmpleado { get; set; } = 0;
 
         [DisplayName("Concepto")]
+        [Required(ErrorMessage = "*Campo requerido.")]
         public int IdConcepto { get; set; } = 0;
 
         [DisplayName("Nómina")]
+        [Required(ErrorMessage = "*Campo requerido.")]
         public int IdNomina { get; set; } = 0;
+
+        [DisplayName("Concepto por liquidación")]
+        [Required(ErrorMessage = "*Campo requerido.")]
         public int IdConceptoLiquidacion { get; set; } = 0;
 
         [DisplayName("Consecutivo nómina")]
+        [Required(ErrorMessage = "*Campo requerido.")]
         public int ConsecutivoNomina { get; set; } = 0;
         public int Cantidad { get; set; } = 0;
         public int Monto { get; set; } = 0;

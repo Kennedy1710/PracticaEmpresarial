@@ -14,7 +14,7 @@ namespace SISASEPBA.Models
 
         public int IdEmpleadoLicencia { get; set; } = 0;
 
-        [DisplayName("Empleado")]
+        [DisplayName("Código de empleado")]
         [Required(ErrorMessage = "*Campo requerido.")]
         public string IdEmpleado { get; set; } = string.Empty;
 
