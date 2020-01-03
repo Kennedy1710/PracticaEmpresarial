@@ -160,5 +160,6 @@ namespace SISASEPBA.Models
         public string UsuarioModificacion { get; set; } = string.Empty;
 
         public DateTime FechaModificacion { get; set; } = DateTime.Now;
+        public string NombreCompleto { get; set; } = string.Empty;
     }
 }

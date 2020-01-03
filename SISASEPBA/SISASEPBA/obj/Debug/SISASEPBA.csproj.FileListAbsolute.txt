@@ -410,7 +410,13 @@ C:\Users\Kennedy\Source\Repos\Kennedy1710\PracticaEmpresarial\SISASEPBA\SISASEPB
 C:\Users\Kennedy\Source\Repos\Kennedy1710\PracticaEmpresarial\SISASEPBA\SISASEPBA\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Kennedy\Source\Repos\Kennedy1710\PracticaEmpresarial\SISASEPBA\SISASEPBA\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Kennedy\Source\Repos\Kennedy1710\PracticaEmpresarial\SISASEPBA\SISASEPBA\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Kennedy\Source\Repos\Kennedy1710\PracticaEmpresarial\SISASEPBA\SISASEPBA\obj\Debug\SISASEPBA.csprojAssemblyReference.cache
 C:\Users\Kennedy\Source\Repos\Kennedy1710\PracticaEmpresarial\SISASEPBA\SISASEPBA\obj\Debug\SISASEPBA.csproj.CopyComplete
 C:\Users\Kennedy\Source\Repos\Kennedy1710\PracticaEmpresarial\SISASEPBA\SISASEPBA\obj\Debug\SISASEPBA.dll
 C:\Users\Kennedy\Source\Repos\Kennedy1710\PracticaEmpresarial\SISASEPBA\SISASEPBA\obj\Debug\SISASEPBA.pdb
+C:\Users\Kennedy\Source\Repos\Kennedy1710\PracticaEmpresarial\SISASEPBA\SISASEPBA\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Kennedy\Source\Repos\Kennedy1710\PracticaEmpresarial\SISASEPBA\SISASEPBA\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Kennedy\Source\Repos\Kennedy1710\PracticaEmpresarial\SISASEPBA\SISASEPBA\bin\es\System.Web.Razor.resources.dll
+C:\Users\Kennedy\Source\Repos\Kennedy1710\PracticaEmpresarial\SISASEPBA\SISASEPBA\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Kennedy\Source\Repos\Kennedy1710\PracticaEmpresarial\SISASEPBA\SISASEPBA\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Kennedy\Source\Repos\Kennedy1710\PracticaEmpresarial\SISASEPBA\SISASEPBA\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Kennedy\Source\Repos\Kennedy1710\PracticaEmpresarial\SISASEPBA\SISASEPBA\obj\Debug\SISASEPBA.csprojAssemblyReference.cache

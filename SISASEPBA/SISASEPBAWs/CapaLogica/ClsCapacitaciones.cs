@@ -50,8 +50,12 @@ namespace SISASEPBAWs.CapaLogica
                     comando.Parameters.AddWithValue("@@FechaInicio", obj.FechaInicio);
                     comando.Parameters.AddWithValue("@@FechaFinalizacion", obj.FechaFinalizacion);
                     comando.Parameters.AddWithValue("@@CantidadHoras", obj.CantidadHoras);
-                    comando.Parameters.AddWithValue("@@Descripcion", obj.Descripcion);
                     comando.Parameters.AddWithValue("@@NombreCapacitacion", obj.NombreCapacitacion);
+                    comando.Parameters.AddWithValue("@@Descripcion", obj.Descripcion);
+                    comando.Parameters.AddWithValue("@@PrimerNombreCapacitador", obj.PrimerNombreDelCapacitador);
+                    comando.Parameters.AddWithValue("@@SegundoNombreCapacitador", obj.SegundoNombreDelCapacitador);
+                    comando.Parameters.AddWithValue("@@PrimerApellidoCapacitador", obj.PrimerApellidoDelCapacitador);
+                    comando.Parameters.AddWithValue("@@SegundoApellidoCapacitador", obj.SegundoApellidoDelCapacitador);
                     comando.Parameters.AddWithValue("@@EmpresaCapacitadora", obj.EmpresaCapacitadora);
                     comando.Parameters.AddWithValue("@@Origen", obj.Origen);
                     comando.Parameters.AddWithValue("@@CargoPagoCapacitacion", obj.CargoPagoCapacitacion);
@@ -122,8 +126,12 @@ namespace SISASEPBAWs.CapaLogica
                     comando.Parameters.AddWithValue("@@FechaInicio", obj.FechaInicio);
                     comando.Parameters.AddWithValue("@@FechaFinalizacion", obj.FechaFinalizacion);
                     comando.Parameters.AddWithValue("@@CantidadHoras", obj.CantidadHoras);
-                    comando.Parameters.AddWithValue("@@Descripcion", obj.Descripcion);
                     comando.Parameters.AddWithValue("@@NombreCapacitacion", obj.NombreCapacitacion);
+                    comando.Parameters.AddWithValue("@@Descripcion", obj.Descripcion);
+                    comando.Parameters.AddWithValue("@@PrimerNombreCapacitador", obj.PrimerNombreDelCapacitador);
+                    comando.Parameters.AddWithValue("@@SegundoNombreCapacitador", obj.SegundoNombreDelCapacitador);
+                    comando.Parameters.AddWithValue("@@PrimerApellidoCapacitador", obj.PrimerApellidoDelCapacitador);
+                    comando.Parameters.AddWithValue("@@SegundoApellidoCapacitador", obj.SegundoApellidoDelCapacitador);
                     comando.Parameters.AddWithValue("@@EmpresaCapacitadora", obj.EmpresaCapacitadora);
                     comando.Parameters.AddWithValue("@@Origen", obj.Origen);
                     comando.Parameters.AddWithValue("@@CargoPagoCapacitacion", obj.CargoPagoCapacitacion);

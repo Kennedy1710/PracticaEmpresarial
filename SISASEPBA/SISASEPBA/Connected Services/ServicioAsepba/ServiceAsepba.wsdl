@@ -227,6 +227,18 @@
   <wsdl:message name="IServiceAsepba_ConsultarEmpleadoConceptoLiquidacion_OutputMessage">
     <wsdl:part name="parameters" element="tns:ConsultarEmpleadoConceptoLiquidacionResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarTipoAccion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarTipoAccion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarTipoAccion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarTipoAccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarTipoAccion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarTipoAccion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarTipoAccion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarTipoAccionResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiceAsepba">
     <wsdl:operation name="ProcesarUsuarios">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarUsuarios" message="tns:IServiceAsepba_ProcesarUsuarios_InputMessage" />
@@ -375,6 +387,14 @@
     <wsdl:operation name="ConsultarEmpleadoConceptoLiquidacion">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoConceptoLiquidacion" message="tns:IServiceAsepba_ConsultarEmpleadoConceptoLiquidacion_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoConceptoLiquidacionResponse" message="tns:IServiceAsepba_ConsultarEmpleadoConceptoLiquidacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarTipoAccion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarTipoAccion" message="tns:IServiceAsepba_ProcesarTipoAccion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarTipoAccionResponse" message="tns:IServiceAsepba_ProcesarTipoAccion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTipoAccion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarTipoAccion" message="tns:IServiceAsepba_ConsultarTipoAccion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarTipoAccionResponse" message="tns:IServiceAsepba_ConsultarTipoAccion_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceAsepba" type="tns:IServiceAsepba">
@@ -705,6 +725,24 @@
     </wsdl:operation>
     <wsdl:operation name="ConsultarEmpleadoConceptoLiquidacion">
       <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoConceptoLiquidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarTipoAccion">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarTipoAccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTipoAccion">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarTipoAccion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

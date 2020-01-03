@@ -81,6 +81,7 @@
     <Compile Include="CapaLogica\ClsNominas.cs" />
     <Compile Include="CapaLogica\ClsNominasHistorico.cs" />
     <Compile Include="CapaLogica\ClsPuestos.cs" />
+    <Compile Include="CapaLogica\ClsTipoAccion.cs" />
     <Compile Include="CapaLogica\ClsUsuarios.cs" />
     <Compile Include="CapaLogica\ClsSeguridad.cs" />
     <Compile Include="CapaLogica\ClsControlVacacional.cs" />

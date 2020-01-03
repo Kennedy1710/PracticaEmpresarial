@@ -172,6 +172,14 @@ namespace SISASEPBAWs
         [OperationContract]
         [TransactionFlow(TransactionFlowOption.Allowed)]
         DataSet ConsultarEmpleadoConceptoLiquidacion(EmpleadoConceptoLiquidacion obj);
+
+        [OperationContract]
+        [TransactionFlow(TransactionFlowOption.Allowed)]
+        Response ProcesarTipoAccion(TipoAccion obj);
+
+        [OperationContract]
+        [TransactionFlow(TransactionFlowOption.Allowed)]
+        DataSet ConsultarTipoAccion(TipoAccion obj);
     }
 
 
@@ -1105,6 +1113,35 @@ namespace SISASEPBAWs
         public string UsuarioModificacion { get; set; } = string.Empty;
         [DataMember]
         public DateTime FechaModificacion { get; set; } = DateTime.Now;
+    }
+
+    [DataContract]
+    public class TipoAccion
+    {
+        [DataMember]
+        public string Accion { get; set; } = string.Empty;
+
+        [DataMember]
+        public int IdTipoAccion { get; set; } = 0;
+
+        [DataMember]
+        public string Alias { get; set; } = string.Empty;
+
+        [DataMember]
+        public string Descripcion { get; set; } = string.Empty;
+
+        [DataMember]
+        public string UsuarioCreacion { get; set; } = string.Empty;
+
+        [DataMember]
+        public DateTime FechaCreacion { get; set; } = DateTime.Now;
+
+        [DataMember]
+        public DateTime FechaModificacion { get; set; } = DateTime.Now;
+
+        [DataMember]
+        public string UsuarioModificacion { get; set; } = string.Empty;
+
     }
 
 

@@ -5,6 +5,7 @@ using System.Web;
 using System.Data;
 using System.Web.Mvc;
 using SISASEPBA.ServicioAsepba;
+//using SISASEPBA.Models;
 
 
 namespace SISASEPBA.Controllers
@@ -13,10 +14,130 @@ namespace SISASEPBA.Controllers
     {
 
         private readonly ServicioAsepba.ServiceAsepbaClient _servicio = new ServiceAsepbaClient();
+
+        #region FH
+        public List<Models.Empleado> Empleados()
+        {
+            try
+            {
+                var dt = _servicio.ConsultarEmpleado(new Empleado
+                {
+                    Accion = "CEA",
+                    FechaCreacion = DateTime.Now,
+                    FechaModificacion = DateTime.Now,
+                    FechaNacimiento = DateTime.Now,
+                    FechaIngreso = DateTime.Now,
+                    FechaSalida = DateTime.Now,
+                    UltimoCambioVac = DateTime.Now
+                });
+
+                var list = dt.Tables[0].AsEnumerable().Select(dataRow => new Models.Empleado
+                {
+                    IdEmpleado = dataRow.Field<int>("IDEMPLEADO"),
+                    NombreCompleto = dataRow.Field<string>("NOMBRE"),
+
+
+                }).ToList();
+
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<Models.Empleado>();
+            }
+
+        }
+        public List<Models.TipoAccion> TipoAcciones()
+        {
+            try
+            {
+                var dt = _servicio.ConsultarTipoAccion(new TipoAccion
+                {
+                    Accion = "CONSULTAR",
+                    FechaCreacion = DateTime.Now,
+                    FechaModificacion = DateTime.Now
+                });
+
+                var list = dt.Tables[0].AsEnumerable().Select(dataRow => new Models.TipoAccion
+                {
+                    IdTipoAP = dataRow.Field<int>("IDTIPOAP"),
+                    Alias = dataRow.Field<string>("ALIAS"),
+                    Descripcion = dataRow.Field<string>("DESCRIPCION"),
+
+                }).ToList();
+
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<Models.TipoAccion>();
+            }
+        }
+        public List<Models.AccionPersonal> AccionPersonals(int idEmpleado,int idAccion,string desde,string hasta)
+        {
+            try
+            {
+                var dt = _servicio.ConsultarAccionDePersonal(new AccionDePersonal
+                {
+                    Accion = "CONSULTAR",
+                    IdEmpleado =idEmpleado,
+                    IdAccionPersonal = idAccion,
+
+                    UsuarioCreacion = User.Identity.Name,
+                    FechaCreacion = DateTime.Now,
+                    UsuarioModificacion = User.Identity.Name,
+                    FechaModificacion = DateTime.Now,
+                    FechaAprobacion = DateTime.Now,
+                    FechaAplicacion = DateTime.Now,
+                    FechaCancelacion = DateTime.Now,
+                    FechaDenegacion = DateTime.Now,
+                    FechaNacimiento = DateTime.Now,
+                    FechaRige = string.IsNullOrEmpty(desde)? DateTime.Now : Convert.ToDateTime(desde) ,
+                    FechaVence = string.IsNullOrEmpty(hasta) ? DateTime.Now : Convert.ToDateTime(hasta),
+                    UltimoCambioVacacional = DateTime.Now
+                });
+
+                var list = dt.Tables[0].AsEnumerable().Select(dataRow => new Models.AccionPersonal
+                {
+                    Nombre = dataRow.Field<string>("NOMBRE"),
+                    CodigoEmpleado = dataRow.Field<string>("CodigoEmpleado"),
+                    AccionDePersonal = dataRow.Field<string>("TipoAccion"),
+                    Estado = dataRow.Field<string>("EstadoAP"),
+                    FechaCreacion = dataRow.Field<DateTime>("FechaCreacion"),
+
+                }).ToList();
+
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<Models.AccionPersonal>();
+            }
+        }
+
+        public PartialViewResult Consultar(string idEmpleado,string idAccion,string desde,string hasta)
+        {
+            var model = new Models.AccionPersonalViewModels
+            {
+                Empleados = Empleados(),
+                TipoAccions = TipoAcciones(),
+                AccionPersonals = AccionPersonals(Convert.ToInt32(idEmpleado), Convert.ToInt32(idAccion), desde, hasta)
+            };
+            return PartialView("_Index",model );
+
+        }
+        #endregion
+
         // GET: AccionesDePersonal
         public ActionResult Index()
         {
-            return View();
+            var model = new Models.AccionPersonalViewModels
+            {
+                Empleados = Empleados(),
+                TipoAccions = TipoAcciones(),
+                AccionPersonals = AccionPersonals(0, 0, "","")
+            };
+            return View(model);
         }
 
         public List<Models.Departamento> Departamentos()
@@ -164,6 +285,9 @@ namespace SISASEPBA.Controllers
 
             return View();
         }
+
+
+
 
         // POST: AccionesDePersonal/Create
         [HttpPost]
