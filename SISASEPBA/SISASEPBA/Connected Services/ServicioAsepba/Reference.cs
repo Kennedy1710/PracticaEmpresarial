@@ -295,6 +295,62 @@ namespace SISASEPBA.ServicioAsepba {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ConsultarTipoDocumento", ReplyAction="http://tempuri.org/IServiceAsepba/ConsultarTipoDocumentoResponse")]
         System.Threading.Tasks.Task<System.Data.DataSet> ConsultarTipoDocumentoAsync(SISASEPBA.ServicioAsepba.TipoDocumento obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ProcesarProveedor", ReplyAction="http://tempuri.org/IServiceAsepba/ProcesarProveedorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SISASEPBA.ServicioAsepba.Response ProcesarProveedor(SISASEPBA.ServicioAsepba.Proveedor obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ProcesarProveedor", ReplyAction="http://tempuri.org/IServiceAsepba/ProcesarProveedorResponse")]
+        System.Threading.Tasks.Task<SISASEPBA.ServicioAsepba.Response> ProcesarProveedorAsync(SISASEPBA.ServicioAsepba.Proveedor obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ConsultarProveedor", ReplyAction="http://tempuri.org/IServiceAsepba/ConsultarProveedorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ConsultarProveedor(SISASEPBA.ServicioAsepba.Proveedor obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ConsultarProveedor", ReplyAction="http://tempuri.org/IServiceAsepba/ConsultarProveedorResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> ConsultarProveedorAsync(SISASEPBA.ServicioAsepba.Proveedor obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ProcesarSocio", ReplyAction="http://tempuri.org/IServiceAsepba/ProcesarSocioResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SISASEPBA.ServicioAsepba.Response ProcesarSocio(SISASEPBA.ServicioAsepba.Socios obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ProcesarSocio", ReplyAction="http://tempuri.org/IServiceAsepba/ProcesarSocioResponse")]
+        System.Threading.Tasks.Task<SISASEPBA.ServicioAsepba.Response> ProcesarSocioAsync(SISASEPBA.ServicioAsepba.Socios obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ConsultarSocio", ReplyAction="http://tempuri.org/IServiceAsepba/ConsultarSocioResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ConsultarSocio(SISASEPBA.ServicioAsepba.Socios obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ConsultarSocio", ReplyAction="http://tempuri.org/IServiceAsepba/ConsultarSocioResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> ConsultarSocioAsync(SISASEPBA.ServicioAsepba.Socios obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ProcesarCartas", ReplyAction="http://tempuri.org/IServiceAsepba/ProcesarCartasResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SISASEPBA.ServicioAsepba.Response ProcesarCartas(SISASEPBA.ServicioAsepba.Cartas obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ProcesarCartas", ReplyAction="http://tempuri.org/IServiceAsepba/ProcesarCartasResponse")]
+        System.Threading.Tasks.Task<SISASEPBA.ServicioAsepba.Response> ProcesarCartasAsync(SISASEPBA.ServicioAsepba.Cartas obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ConsultarCartas", ReplyAction="http://tempuri.org/IServiceAsepba/ConsultarCartasResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ConsultarCartas(SISASEPBA.ServicioAsepba.Cartas obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ConsultarCartas", ReplyAction="http://tempuri.org/IServiceAsepba/ConsultarCartasResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> ConsultarCartasAsync(SISASEPBA.ServicioAsepba.Cartas obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ProcesarOrdenCompra", ReplyAction="http://tempuri.org/IServiceAsepba/ProcesarOrdenCompraResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SISASEPBA.ServicioAsepba.Response ProcesarOrdenCompra(SISASEPBA.ServicioAsepba.OrdenCompra obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ProcesarOrdenCompra", ReplyAction="http://tempuri.org/IServiceAsepba/ProcesarOrdenCompraResponse")]
+        System.Threading.Tasks.Task<SISASEPBA.ServicioAsepba.Response> ProcesarOrdenCompraAsync(SISASEPBA.ServicioAsepba.OrdenCompra obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ConsultarOrdenCompra", ReplyAction="http://tempuri.org/IServiceAsepba/ConsultarOrdenCompraResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ConsultarOrdenCompra(SISASEPBA.ServicioAsepba.OrdenCompra obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAsepba/ConsultarOrdenCompra", ReplyAction="http://tempuri.org/IServiceAsepba/ConsultarOrdenCompraResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> ConsultarOrdenCompraAsync(SISASEPBA.ServicioAsepba.OrdenCompra obj);
     }
     
     /// <remarks/>
@@ -498,6 +554,974 @@ namespace SISASEPBA.ServicioAsepba {
             set {
                 this.usuarioSesionField = value;
                 this.RaisePropertyChanged("UsuarioSesion");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class OrdenCompra : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string accionField;
+        
+        private int idOrdenCompraField;
+        
+        private int idSocioField;
+        
+        private int idProveedorField;
+        
+        private System.DateTime fechaEmisionField;
+        
+        private string descripcionField;
+        
+        private int montoTotalField;
+        
+        private int numeroFacturaProformaField;
+        
+        private string usuarioCreacionField;
+        
+        private System.DateTime fechaCreacionField;
+        
+        private string usuarioModificacionField;
+        
+        private System.DateTime fechaModificacionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Accion {
+            get {
+                return this.accionField;
+            }
+            set {
+                this.accionField = value;
+                this.RaisePropertyChanged("Accion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int IdOrdenCompra {
+            get {
+                return this.idOrdenCompraField;
+            }
+            set {
+                this.idOrdenCompraField = value;
+                this.RaisePropertyChanged("IdOrdenCompra");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int IdSocio {
+            get {
+                return this.idSocioField;
+            }
+            set {
+                this.idSocioField = value;
+                this.RaisePropertyChanged("IdSocio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int IdProveedor {
+            get {
+                return this.idProveedorField;
+            }
+            set {
+                this.idProveedorField = value;
+                this.RaisePropertyChanged("IdProveedor");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public System.DateTime FechaEmision {
+            get {
+                return this.fechaEmisionField;
+            }
+            set {
+                this.fechaEmisionField = value;
+                this.RaisePropertyChanged("FechaEmision");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string Descripcion {
+            get {
+                return this.descripcionField;
+            }
+            set {
+                this.descripcionField = value;
+                this.RaisePropertyChanged("Descripcion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public int MontoTotal {
+            get {
+                return this.montoTotalField;
+            }
+            set {
+                this.montoTotalField = value;
+                this.RaisePropertyChanged("MontoTotal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public int NumeroFacturaProforma {
+            get {
+                return this.numeroFacturaProformaField;
+            }
+            set {
+                this.numeroFacturaProformaField = value;
+                this.RaisePropertyChanged("NumeroFacturaProforma");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string UsuarioCreacion {
+            get {
+                return this.usuarioCreacionField;
+            }
+            set {
+                this.usuarioCreacionField = value;
+                this.RaisePropertyChanged("UsuarioCreacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public System.DateTime FechaCreacion {
+            get {
+                return this.fechaCreacionField;
+            }
+            set {
+                this.fechaCreacionField = value;
+                this.RaisePropertyChanged("FechaCreacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string UsuarioModificacion {
+            get {
+                return this.usuarioModificacionField;
+            }
+            set {
+                this.usuarioModificacionField = value;
+                this.RaisePropertyChanged("UsuarioModificacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public System.DateTime FechaModificacion {
+            get {
+                return this.fechaModificacionField;
+            }
+            set {
+                this.fechaModificacionField = value;
+                this.RaisePropertyChanged("FechaModificacion");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Cartas : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string accionField;
+        
+        private int idCartaField;
+        
+        private int idSocioField;
+        
+        private int idProveedorField;
+        
+        private System.DateTime fechaField;
+        
+        private int cantidadImpresionesField;
+        
+        private string usuarioCreacionField;
+        
+        private System.DateTime fechaCreacionField;
+        
+        private string usuarioModificacionField;
+        
+        private System.DateTime fechaModificacionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Accion {
+            get {
+                return this.accionField;
+            }
+            set {
+                this.accionField = value;
+                this.RaisePropertyChanged("Accion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int IdCarta {
+            get {
+                return this.idCartaField;
+            }
+            set {
+                this.idCartaField = value;
+                this.RaisePropertyChanged("IdCarta");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int IdSocio {
+            get {
+                return this.idSocioField;
+            }
+            set {
+                this.idSocioField = value;
+                this.RaisePropertyChanged("IdSocio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int IdProveedor {
+            get {
+                return this.idProveedorField;
+            }
+            set {
+                this.idProveedorField = value;
+                this.RaisePropertyChanged("IdProveedor");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public System.DateTime Fecha {
+            get {
+                return this.fechaField;
+            }
+            set {
+                this.fechaField = value;
+                this.RaisePropertyChanged("Fecha");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public int CantidadImpresiones {
+            get {
+                return this.cantidadImpresionesField;
+            }
+            set {
+                this.cantidadImpresionesField = value;
+                this.RaisePropertyChanged("CantidadImpresiones");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string UsuarioCreacion {
+            get {
+                return this.usuarioCreacionField;
+            }
+            set {
+                this.usuarioCreacionField = value;
+                this.RaisePropertyChanged("UsuarioCreacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public System.DateTime FechaCreacion {
+            get {
+                return this.fechaCreacionField;
+            }
+            set {
+                this.fechaCreacionField = value;
+                this.RaisePropertyChanged("FechaCreacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string UsuarioModificacion {
+            get {
+                return this.usuarioModificacionField;
+            }
+            set {
+                this.usuarioModificacionField = value;
+                this.RaisePropertyChanged("UsuarioModificacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public System.DateTime FechaModificacion {
+            get {
+                return this.fechaModificacionField;
+            }
+            set {
+                this.fechaModificacionField = value;
+                this.RaisePropertyChanged("FechaModificacion");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Socios : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string accionField;
+        
+        private int idSocioField;
+        
+        private int numeroIdentificacionField;
+        
+        private string primerNombreSocioField;
+        
+        private string segundoNombreSocioField;
+        
+        private string primerApellidoSocioField;
+        
+        private string segundoApellidoSocioField;
+        
+        private string empresaField;
+        
+        private System.DateTime fechaIngresoAsociacionField;
+        
+        private bool estadoField;
+        
+        private string usuarioCreacionField;
+        
+        private System.DateTime fechaCreacionField;
+        
+        private string usuarioModificacionField;
+        
+        private System.DateTime fechaModificacionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Accion {
+            get {
+                return this.accionField;
+            }
+            set {
+                this.accionField = value;
+                this.RaisePropertyChanged("Accion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int IdSocio {
+            get {
+                return this.idSocioField;
+            }
+            set {
+                this.idSocioField = value;
+                this.RaisePropertyChanged("IdSocio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int NumeroIdentificacion {
+            get {
+                return this.numeroIdentificacionField;
+            }
+            set {
+                this.numeroIdentificacionField = value;
+                this.RaisePropertyChanged("NumeroIdentificacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string PrimerNombreSocio {
+            get {
+                return this.primerNombreSocioField;
+            }
+            set {
+                this.primerNombreSocioField = value;
+                this.RaisePropertyChanged("PrimerNombreSocio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string SegundoNombreSocio {
+            get {
+                return this.segundoNombreSocioField;
+            }
+            set {
+                this.segundoNombreSocioField = value;
+                this.RaisePropertyChanged("SegundoNombreSocio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string PrimerApellidoSocio {
+            get {
+                return this.primerApellidoSocioField;
+            }
+            set {
+                this.primerApellidoSocioField = value;
+                this.RaisePropertyChanged("PrimerApellidoSocio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string SegundoApellidoSocio {
+            get {
+                return this.segundoApellidoSocioField;
+            }
+            set {
+                this.segundoApellidoSocioField = value;
+                this.RaisePropertyChanged("SegundoApellidoSocio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string Empresa {
+            get {
+                return this.empresaField;
+            }
+            set {
+                this.empresaField = value;
+                this.RaisePropertyChanged("Empresa");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public System.DateTime FechaIngresoAsociacion {
+            get {
+                return this.fechaIngresoAsociacionField;
+            }
+            set {
+                this.fechaIngresoAsociacionField = value;
+                this.RaisePropertyChanged("FechaIngresoAsociacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public bool Estado {
+            get {
+                return this.estadoField;
+            }
+            set {
+                this.estadoField = value;
+                this.RaisePropertyChanged("Estado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string UsuarioCreacion {
+            get {
+                return this.usuarioCreacionField;
+            }
+            set {
+                this.usuarioCreacionField = value;
+                this.RaisePropertyChanged("UsuarioCreacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public System.DateTime FechaCreacion {
+            get {
+                return this.fechaCreacionField;
+            }
+            set {
+                this.fechaCreacionField = value;
+                this.RaisePropertyChanged("FechaCreacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string UsuarioModificacion {
+            get {
+                return this.usuarioModificacionField;
+            }
+            set {
+                this.usuarioModificacionField = value;
+                this.RaisePropertyChanged("UsuarioModificacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public System.DateTime FechaModificacion {
+            get {
+                return this.fechaModificacionField;
+            }
+            set {
+                this.fechaModificacionField = value;
+                this.RaisePropertyChanged("FechaModificacion");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Proveedor : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string accionField;
+        
+        private int idProveedorField;
+        
+        private int numeroCedulaField;
+        
+        private string nombreFantasiaField;
+        
+        private string nombreRealField;
+        
+        private string primerNombreApoderadoField;
+        
+        private string segundoNombreApoderadoField;
+        
+        private string primerApellidoApoderadoField;
+        
+        private string segundoApellidoApoderadoField;
+        
+        private int cedulaApoderadoField;
+        
+        private System.DateTime fechaRigeField;
+        
+        private System.DateTime fechaVenceField;
+        
+        private bool estadoField;
+        
+        private string descripcionConvenioField;
+        
+        private string beneficioAsociadoField;
+        
+        private string beneficioASEPBAField;
+        
+        private byte[] documentoAdjuntoField;
+        
+        private string personaContactoField;
+        
+        private string correoContactoField;
+        
+        private string telefonoContactoField;
+        
+        private string segundaPersonaContactoField;
+        
+        private string correoSegundoContactoField;
+        
+        private string telefonoSegundoContactoField;
+        
+        private byte[] logoField;
+        
+        private string usuarioCreacionField;
+        
+        private System.DateTime fechaCreacionField;
+        
+        private string usuarioModificacionField;
+        
+        private System.DateTime fechaModificacionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Accion {
+            get {
+                return this.accionField;
+            }
+            set {
+                this.accionField = value;
+                this.RaisePropertyChanged("Accion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int IdProveedor {
+            get {
+                return this.idProveedorField;
+            }
+            set {
+                this.idProveedorField = value;
+                this.RaisePropertyChanged("IdProveedor");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int NumeroCedula {
+            get {
+                return this.numeroCedulaField;
+            }
+            set {
+                this.numeroCedulaField = value;
+                this.RaisePropertyChanged("NumeroCedula");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string NombreFantasia {
+            get {
+                return this.nombreFantasiaField;
+            }
+            set {
+                this.nombreFantasiaField = value;
+                this.RaisePropertyChanged("NombreFantasia");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string NombreReal {
+            get {
+                return this.nombreRealField;
+            }
+            set {
+                this.nombreRealField = value;
+                this.RaisePropertyChanged("NombreReal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string PrimerNombreApoderado {
+            get {
+                return this.primerNombreApoderadoField;
+            }
+            set {
+                this.primerNombreApoderadoField = value;
+                this.RaisePropertyChanged("PrimerNombreApoderado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string SegundoNombreApoderado {
+            get {
+                return this.segundoNombreApoderadoField;
+            }
+            set {
+                this.segundoNombreApoderadoField = value;
+                this.RaisePropertyChanged("SegundoNombreApoderado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string PrimerApellidoApoderado {
+            get {
+                return this.primerApellidoApoderadoField;
+            }
+            set {
+                this.primerApellidoApoderadoField = value;
+                this.RaisePropertyChanged("PrimerApellidoApoderado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string SegundoApellidoApoderado {
+            get {
+                return this.segundoApellidoApoderadoField;
+            }
+            set {
+                this.segundoApellidoApoderadoField = value;
+                this.RaisePropertyChanged("SegundoApellidoApoderado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public int CedulaApoderado {
+            get {
+                return this.cedulaApoderadoField;
+            }
+            set {
+                this.cedulaApoderadoField = value;
+                this.RaisePropertyChanged("CedulaApoderado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public System.DateTime FechaRige {
+            get {
+                return this.fechaRigeField;
+            }
+            set {
+                this.fechaRigeField = value;
+                this.RaisePropertyChanged("FechaRige");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public System.DateTime FechaVence {
+            get {
+                return this.fechaVenceField;
+            }
+            set {
+                this.fechaVenceField = value;
+                this.RaisePropertyChanged("FechaVence");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public bool Estado {
+            get {
+                return this.estadoField;
+            }
+            set {
+                this.estadoField = value;
+                this.RaisePropertyChanged("Estado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string DescripcionConvenio {
+            get {
+                return this.descripcionConvenioField;
+            }
+            set {
+                this.descripcionConvenioField = value;
+                this.RaisePropertyChanged("DescripcionConvenio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string BeneficioAsociado {
+            get {
+                return this.beneficioAsociadoField;
+            }
+            set {
+                this.beneficioAsociadoField = value;
+                this.RaisePropertyChanged("BeneficioAsociado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string BeneficioASEPBA {
+            get {
+                return this.beneficioASEPBAField;
+            }
+            set {
+                this.beneficioASEPBAField = value;
+                this.RaisePropertyChanged("BeneficioASEPBA");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=16)]
+        public byte[] DocumentoAdjunto {
+            get {
+                return this.documentoAdjuntoField;
+            }
+            set {
+                this.documentoAdjuntoField = value;
+                this.RaisePropertyChanged("DocumentoAdjunto");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public string PersonaContacto {
+            get {
+                return this.personaContactoField;
+            }
+            set {
+                this.personaContactoField = value;
+                this.RaisePropertyChanged("PersonaContacto");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        public string CorreoContacto {
+            get {
+                return this.correoContactoField;
+            }
+            set {
+                this.correoContactoField = value;
+                this.RaisePropertyChanged("CorreoContacto");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        public string TelefonoContacto {
+            get {
+                return this.telefonoContactoField;
+            }
+            set {
+                this.telefonoContactoField = value;
+                this.RaisePropertyChanged("TelefonoContacto");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        public string SegundaPersonaContacto {
+            get {
+                return this.segundaPersonaContactoField;
+            }
+            set {
+                this.segundaPersonaContactoField = value;
+                this.RaisePropertyChanged("SegundaPersonaContacto");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        public string CorreoSegundoContacto {
+            get {
+                return this.correoSegundoContactoField;
+            }
+            set {
+                this.correoSegundoContactoField = value;
+                this.RaisePropertyChanged("CorreoSegundoContacto");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        public string TelefonoSegundoContacto {
+            get {
+                return this.telefonoSegundoContactoField;
+            }
+            set {
+                this.telefonoSegundoContactoField = value;
+                this.RaisePropertyChanged("TelefonoSegundoContacto");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=23)]
+        public byte[] Logo {
+            get {
+                return this.logoField;
+            }
+            set {
+                this.logoField = value;
+                this.RaisePropertyChanged("Logo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        public string UsuarioCreacion {
+            get {
+                return this.usuarioCreacionField;
+            }
+            set {
+                this.usuarioCreacionField = value;
+                this.RaisePropertyChanged("UsuarioCreacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        public System.DateTime FechaCreacion {
+            get {
+                return this.fechaCreacionField;
+            }
+            set {
+                this.fechaCreacionField = value;
+                this.RaisePropertyChanged("FechaCreacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
+        public string UsuarioModificacion {
+            get {
+                return this.usuarioModificacionField;
+            }
+            set {
+                this.usuarioModificacionField = value;
+                this.RaisePropertyChanged("UsuarioModificacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
+        public System.DateTime FechaModificacion {
+            get {
+                return this.fechaModificacionField;
+            }
+            set {
+                this.fechaModificacionField = value;
+                this.RaisePropertyChanged("FechaModificacion");
             }
         }
         
@@ -6040,6 +7064,70 @@ namespace SISASEPBA.ServicioAsepba {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> ConsultarTipoDocumentoAsync(SISASEPBA.ServicioAsepba.TipoDocumento obj) {
             return base.Channel.ConsultarTipoDocumentoAsync(obj);
+        }
+        
+        public SISASEPBA.ServicioAsepba.Response ProcesarProveedor(SISASEPBA.ServicioAsepba.Proveedor obj) {
+            return base.Channel.ProcesarProveedor(obj);
+        }
+        
+        public System.Threading.Tasks.Task<SISASEPBA.ServicioAsepba.Response> ProcesarProveedorAsync(SISASEPBA.ServicioAsepba.Proveedor obj) {
+            return base.Channel.ProcesarProveedorAsync(obj);
+        }
+        
+        public System.Data.DataSet ConsultarProveedor(SISASEPBA.ServicioAsepba.Proveedor obj) {
+            return base.Channel.ConsultarProveedor(obj);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> ConsultarProveedorAsync(SISASEPBA.ServicioAsepba.Proveedor obj) {
+            return base.Channel.ConsultarProveedorAsync(obj);
+        }
+        
+        public SISASEPBA.ServicioAsepba.Response ProcesarSocio(SISASEPBA.ServicioAsepba.Socios obj) {
+            return base.Channel.ProcesarSocio(obj);
+        }
+        
+        public System.Threading.Tasks.Task<SISASEPBA.ServicioAsepba.Response> ProcesarSocioAsync(SISASEPBA.ServicioAsepba.Socios obj) {
+            return base.Channel.ProcesarSocioAsync(obj);
+        }
+        
+        public System.Data.DataSet ConsultarSocio(SISASEPBA.ServicioAsepba.Socios obj) {
+            return base.Channel.ConsultarSocio(obj);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> ConsultarSocioAsync(SISASEPBA.ServicioAsepba.Socios obj) {
+            return base.Channel.ConsultarSocioAsync(obj);
+        }
+        
+        public SISASEPBA.ServicioAsepba.Response ProcesarCartas(SISASEPBA.ServicioAsepba.Cartas obj) {
+            return base.Channel.ProcesarCartas(obj);
+        }
+        
+        public System.Threading.Tasks.Task<SISASEPBA.ServicioAsepba.Response> ProcesarCartasAsync(SISASEPBA.ServicioAsepba.Cartas obj) {
+            return base.Channel.ProcesarCartasAsync(obj);
+        }
+        
+        public System.Data.DataSet ConsultarCartas(SISASEPBA.ServicioAsepba.Cartas obj) {
+            return base.Channel.ConsultarCartas(obj);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> ConsultarCartasAsync(SISASEPBA.ServicioAsepba.Cartas obj) {
+            return base.Channel.ConsultarCartasAsync(obj);
+        }
+        
+        public SISASEPBA.ServicioAsepba.Response ProcesarOrdenCompra(SISASEPBA.ServicioAsepba.OrdenCompra obj) {
+            return base.Channel.ProcesarOrdenCompra(obj);
+        }
+        
+        public System.Threading.Tasks.Task<SISASEPBA.ServicioAsepba.Response> ProcesarOrdenCompraAsync(SISASEPBA.ServicioAsepba.OrdenCompra obj) {
+            return base.Channel.ProcesarOrdenCompraAsync(obj);
+        }
+        
+        public System.Data.DataSet ConsultarOrdenCompra(SISASEPBA.ServicioAsepba.OrdenCompra obj) {
+            return base.Channel.ConsultarOrdenCompra(obj);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> ConsultarOrdenCompraAsync(SISASEPBA.ServicioAsepba.OrdenCompra obj) {
+            return base.Channel.ConsultarOrdenCompraAsync(obj);
         }
     }
 }

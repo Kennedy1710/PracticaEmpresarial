@@ -69,6 +69,7 @@
     <Compile Include="CapaDatos\AccesoDatos.cs" />
     <Compile Include="CapaLogica\ClsAccionesDePersonal.cs" />
     <Compile Include="CapaLogica\ClsCapacitaciones.cs" />
+    <Compile Include="CapaLogica\ClsCartas.cs" />
     <Compile Include="CapaLogica\ClsConceptoFormula.cs" />
     <Compile Include="CapaLogica\ClsConceptoLiquidacion.cs" />
     <Compile Include="CapaLogica\ClsConceptos.cs" />
@@ -81,7 +82,10 @@
     <Compile Include="CapaLogica\ClsEmpleadoLicencia.cs" />
     <Compile Include="CapaLogica\ClsNominas.cs" />
     <Compile Include="CapaLogica\ClsNominasHistorico.cs" />
+    <Compile Include="CapaLogica\ClsOrdenCompra.cs" />
+    <Compile Include="CapaLogica\ClsProveedor.cs" />
     <Compile Include="CapaLogica\ClsPuestos.cs" />
+    <Compile Include="CapaLogica\ClsSocio.cs" />
     <Compile Include="CapaLogica\ClsTipoDocumento.cs" />
     <Compile Include="CapaLogica\ClsUsuarios.cs" />
     <Compile Include="CapaLogica\ClsSeguridad.cs" />
@@ -89,6 +93,7 @@
     <Compile Include="CapaObjetos\ObjAccionDePersonal.cs" />
     <Compile Include="CapaObjetos\ObjAccionesDePersonal.cs" />
     <Compile Include="CapaObjetos\ObjCapacitaciones.cs" />
+    <Compile Include="CapaObjetos\ObjCartas.cs" />
     <Compile Include="CapaObjetos\ObjConceptoFormula.cs" />
     <Compile Include="CapaObjetos\ObjConceptoLiquidacion.cs" />
     <Compile Include="CapaObjetos\ObjConceptos.cs" />
@@ -104,7 +109,10 @@
     <Compile Include="CapaObjetos\ObjEmpleadoLicencia.cs" />
     <Compile Include="CapaObjetos\ObjNacionalidades.cs" />
     <Compile Include="CapaObjetos\ObjNominasHistorico.cs" />
+    <Compile Include="CapaObjetos\ObjOrdenCompra.cs" />
+    <Compile Include="CapaObjetos\ObjProveedor.cs" />
     <Compile Include="CapaObjetos\ObjPuestos.cs" />
+    <Compile Include="CapaObjetos\ObjSocios.cs" />
     <Compile Include="CapaObjetos\ObjTipoDocumento.cs" />
     <Compile Include="CapaObjetos\ObjTipoLicencia.cs" />
     <Compile Include="CapaObjetos\ObjUsuario.cs" />

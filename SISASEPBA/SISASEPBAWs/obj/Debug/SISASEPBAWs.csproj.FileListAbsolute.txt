@@ -28,3 +28,8 @@ C:\Users\yosel\Desktop\PracticaEmpresarial\SISASEPBA\SISASEPBAWs\bin\SISASEPBAWs
 C:\Users\yosel\Desktop\PracticaEmpresarial\SISASEPBA\SISASEPBAWs\obj\Debug\SISASEPBAWs.csprojAssemblyReference.cache
 C:\Users\yosel\Desktop\PracticaEmpresarial\SISASEPBA\SISASEPBAWs\obj\Debug\SISASEPBAWs.dll
 C:\Users\yosel\Desktop\PracticaEmpresarial\SISASEPBA\SISASEPBAWs\obj\Debug\SISASEPBAWs.pdb
+C:\Users\aori1\Desktop\Practica\SISASEPBA\SISASEPBA\SISASEPBAWs\bin\SISASEPBAWs.dll.config
+C:\Users\aori1\Desktop\Practica\SISASEPBA\SISASEPBA\SISASEPBAWs\bin\SISASEPBAWs.dll
+C:\Users\aori1\Desktop\Practica\SISASEPBA\SISASEPBA\SISASEPBAWs\bin\SISASEPBAWs.pdb
+C:\Users\aori1\Desktop\Practica\SISASEPBA\SISASEPBA\SISASEPBAWs\obj\Debug\SISASEPBAWs.dll
+C:\Users\aori1\Desktop\Practica\SISASEPBA\SISASEPBA\SISASEPBAWs\obj\Debug\SISASEPBAWs.pdb

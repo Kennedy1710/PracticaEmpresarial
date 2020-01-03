@@ -185,6 +185,37 @@ namespace SISASEPBAWs
         [TransactionFlow(TransactionFlowOption.Allowed)]
         DataSet ConsultarTipoDocumento(TipoDocumento obj);
 
+        [OperationContract]
+        [TransactionFlow(TransactionFlowOption.Allowed)]
+        Response ProcesarProveedor(Proveedor obj);
+
+        [OperationContract]
+        [TransactionFlow(TransactionFlowOption.Allowed)]
+        DataSet ConsultarProveedor(Proveedor obj);
+
+        [OperationContract]
+        [TransactionFlow(TransactionFlowOption.Allowed)]
+        Response ProcesarSocio(Socios obj);
+
+        [OperationContract]
+        [TransactionFlow(TransactionFlowOption.Allowed)]
+        DataSet ConsultarSocio(Socios obj);
+
+        [OperationContract]
+        [TransactionFlow(TransactionFlowOption.Allowed)]
+        Response ProcesarCartas(Cartas obj);
+
+        [OperationContract]
+        [TransactionFlow(TransactionFlowOption.Allowed)]
+        DataSet ConsultarCartas(Cartas obj);
+
+        [OperationContract]
+        [TransactionFlow(TransactionFlowOption.Allowed)]
+        Response ProcesarOrdenCompra(OrdenCompra obj);
+
+        [OperationContract]
+        [TransactionFlow(TransactionFlowOption.Allowed)]
+        DataSet ConsultarOrdenCompra(OrdenCompra obj);
     }
 
 
@@ -1175,5 +1206,213 @@ namespace SISASEPBAWs
         public DateTime FechaModificacion { get; set; } = DateTime.Now;
     }
 
+    [DataContract]
+    public class Proveedor
+    {
+        [DataMember]
+        public string Accion { get; set; } = string.Empty;
+
+        [DataMember]
+        public int IdProveedor { get; set; } = 0;
+
+        [DataMember]
+        public int NumeroCedula { get; set; } = 0;
+
+        [DataMember]
+        public string NombreFantasia { get; set; } = string.Empty;
+
+        [DataMember]
+        public string NombreReal { get; set; } = string.Empty;
+
+        [DataMember]
+        public string PrimerNombreApoderado { get; set; } = string.Empty;
+
+        [DataMember]
+        public string SegundoNombreApoderado { get; set; } = string.Empty;
+
+        [DataMember]
+        public string PrimerApellidoApoderado { get; set; } = string.Empty;
+
+        [DataMember]
+        public string SegundoApellidoApoderado { get; set; } = string.Empty;
+
+        [DataMember]
+        public int CedulaApoderado { get; set; } = 0;
+
+        [DataMember]
+        public DateTime FechaRige { get; set; } = DateTime.Now;
+
+        [DataMember]
+        public DateTime FechaVence { get; set; } = DateTime.Now;
+
+        [DataMember]
+        public bool Estado { get; set; } = false;
+
+        [DataMember]
+        public string DescripcionConvenio { get; set; } = string.Empty;
+
+        [DataMember]
+        public string BeneficioAsociado { get; set; } = string.Empty;
+
+        [DataMember]
+        public string BeneficioASEPBA { get; set; } = string.Empty;
+
+        [DataMember]
+        public byte[] DocumentoAdjunto { get; set; } = null;
+
+        [DataMember]
+        public string PersonaContacto { get; set; } = string.Empty;
+
+        [DataMember]
+        public string CorreoContacto { get; set; } = string.Empty;
+
+        [DataMember]
+        public string TelefonoContacto { get; set; } = string.Empty;
+
+        [DataMember]
+        public string SegundaPersonaContacto { get; set; } = string.Empty;
+
+        [DataMember]
+        public string CorreoSegundoContacto { get; set; } = string.Empty;
+
+        [DataMember]
+        public string TelefonoSegundoContacto { get; set; } = string.Empty;
+
+        [DataMember]
+        public byte[] Logo { get; set; } = null;
+
+        [DataMember]
+        public string UsuarioCreacion { get; set; } = string.Empty;
+
+        [DataMember]
+        public DateTime FechaCreacion { get; set; } = DateTime.Now;
+
+        [DataMember]
+        public string UsuarioModificacion { get; set; } = string.Empty;
+
+        [DataMember]
+        public DateTime FechaModificacion { get; set; } = DateTime.Now;
+
+    }
+
+    [DataContract]
+    public class Cartas
+    {
+        [DataMember]
+        public string Accion { get; set; } = string.Empty;
+
+        [DataMember]
+        public int IdCarta { get; set; } = 0;
+
+        [DataMember]
+        public int IdSocio { get; set; } = 0;
+
+        [DataMember]
+        public int IdProveedor { get; set; } = 0;
+
+        [DataMember]
+        public DateTime Fecha { get; set; } = DateTime.Now;
+
+        [DataMember]
+        public int CantidadImpresiones { get; set; } = 0;
+
+        [DataMember]
+        public string UsuarioCreacion { get; set; } = string.Empty;
+
+        [DataMember]
+        public DateTime FechaCreacion { get; set; } = DateTime.Now;
+
+        [DataMember]
+        public string UsuarioModificacion { get; set; } = string.Empty;
+
+        [DataMember]
+        public DateTime FechaModificacion { get; set; } = DateTime.Now;
+    }
+
+    [DataContract]
+    public class Socios
+    {
+        [DataMember]
+        public string Accion { get; set; } = string.Empty;
+
+        [DataMember]
+        public int IdSocio { get; set; } = 0;
+
+        [DataMember]
+        public int NumeroIdentificacion { get; set; } = 0;
+
+        [DataMember]
+        public string PrimerNombreSocio { get; set; } = string.Empty;
+
+        [DataMember]
+        public string SegundoNombreSocio { get; set; } = string.Empty;
+
+        [DataMember]
+        public string PrimerApellidoSocio { get; set; } = string.Empty;
+
+        [DataMember]
+        public string SegundoApellidoSocio { get; set; } = string.Empty;
+
+        [DataMember]
+        public string Empresa { get; set; } = string.Empty;
+
+        [DataMember]
+        public DateTime FechaIngresoAsociacion { get; set; } = DateTime.Now;
+
+        [DataMember]
+        public bool Estado { get; set; } = false;
+
+        [DataMember]
+        public string UsuarioCreacion { get; set; } = string.Empty;
+
+        [DataMember]
+        public DateTime FechaCreacion { get; set; } = DateTime.Now;
+
+        [DataMember]
+        public string UsuarioModificacion { get; set; } = string.Empty;
+
+        [DataMember]
+        public DateTime FechaModificacion { get; set; } = DateTime.Now;
+    }
+
+    [DataContract]
+    public class OrdenCompra
+    {
+        [DataMember]
+        public string Accion { get; set; } = string.Empty;
+
+        [DataMember]
+        public int IdOrdenCompra { get; set; } = 0;
+
+        [DataMember]
+        public int IdSocio { get; set; } = 0;
+
+        [DataMember]
+        public int IdProveedor { get; set; } = 0;
+
+        [DataMember]
+        public DateTime FechaEmision { get; set; } = DateTime.Now;
+
+        [DataMember]
+        public string Descripcion { get; set; } = string.Empty;
+
+        [DataMember]
+        public int MontoTotal { get; set; } = 0;
+
+        [DataMember]
+        public int NumeroFacturaProforma { get; set; } = 0;
+
+        [DataMember]
+        public string UsuarioCreacion { get; set; } = string.Empty;
+
+        [DataMember]
+        public DateTime FechaCreacion { get; set; } = DateTime.Now;
+
+        [DataMember]
+        public string UsuarioModificacion { get; set; } = string.Empty;
+
+        [DataMember]
+        public DateTime FechaModificacion { get; set; } = DateTime.Now;
+    }
 
 }

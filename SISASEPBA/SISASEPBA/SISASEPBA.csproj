@@ -177,6 +177,7 @@
     <Compile Include="Controllers\AccionesDePersonalController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CapacitacionesController.cs" />
+    <Compile Include="Controllers\CartasController.cs" />
     <Compile Include="Controllers\ConceptosController.cs" />
     <Compile Include="Controllers\ControlVacacionalController.cs" />
     <Compile Include="Controllers\DepartamentosController.cs" />
@@ -191,7 +192,10 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NominasController.cs" />
     <Compile Include="Controllers\NominasHistoricoController.cs" />
+    <Compile Include="Controllers\OrdenesDeCompraController.cs" />
+    <Compile Include="Controllers\ProveedoresController.cs" />
     <Compile Include="Controllers\PuestosController.cs" />
+    <Compile Include="Controllers\SociosController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -217,6 +221,7 @@
     <Compile Include="Models\APSuspencion.cs" />
     <Compile Include="Models\APVacaccionesDisfrutadasYAcumuladas.cs" />
     <Compile Include="Models\Capacitacion.cs" />
+    <Compile Include="Models\Cartas.cs" />
     <Compile Include="Models\ConceptoFormula.cs" />
     <Compile Include="Models\ConceptoLiquidacion.cs" />
     <Compile Include="Models\Conceptos.cs" />
@@ -234,7 +239,10 @@
     <Compile Include="Models\Nacionalidad.cs" />
     <Compile Include="Models\Nomina.cs" />
     <Compile Include="Models\NominasHistorico.cs" />
+    <Compile Include="Models\OrdenDeCompra.cs" />
+    <Compile Include="Models\Proveedor.cs" />
     <Compile Include="Models\Puesto.cs" />
+    <Compile Include="Models\Socio.cs" />
     <Compile Include="Models\TipoCapacitaciones.cs" />
     <Compile Include="Models\TipoDocumento.cs" />
     <Compile Include="Models\TipoLicencias.cs" />
@@ -617,6 +625,18 @@
     <Content Include="Views\Documentos\Index.cshtml" />
     <Content Include="Views\Documentos\Create.cshtml" />
     <Content Include="Views\Documentos\Edit.cshtml" />
+    <Content Include="Views\Cartas\Create.cshtml" />
+    <Content Include="Views\Cartas\Edit.cshtml" />
+    <Content Include="Views\Cartas\Index.cshtml" />
+    <Content Include="Views\OrdenesDeCompra\Create.cshtml" />
+    <Content Include="Views\OrdenesDeCompra\Edit.cshtml" />
+    <Content Include="Views\OrdenesDeCompra\Index.cshtml" />
+    <Content Include="Views\Proveedores\Create.cshtml" />
+    <Content Include="Views\Proveedores\Edit.cshtml" />
+    <Content Include="Views\Proveedores\Index.cshtml" />
+    <Content Include="Views\Socios\Create.cshtml" />
+    <Content Include="Views\Socios\Edit.cshtml" />
+    <Content Include="Views\Socios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

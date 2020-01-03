@@ -609,5 +609,125 @@ namespace SISASEPBAWs
         }
 
 
+
+        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
+        public Response ProcesarProveedor(Proveedor obj)
+        {
+            try
+            {
+                return ClsProveedor.ProcesarProveedor(obj);
+            }
+            catch (Exception e)
+            {
+                return new Response
+                {
+                    IsSuccess = false
+                };
+            }
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
+        public DataSet ConsultarProveedor(Proveedor obj)
+        {
+            try
+            {
+                return ClsProveedor.ConsultarProveedor(obj);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+
+        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
+        public Response ProcesarSocio(Socios obj)
+        {
+            try
+            {
+                return ClsSocio.ProcesarSocio(obj);
+            }
+            catch (Exception e)
+            {
+                return new Response
+                {
+                    IsSuccess = false
+                };
+            }
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
+        public DataSet ConsultarSocio(Socios obj)
+        {
+            try
+            {
+                return ClsSocio.ConsultarSocio(obj);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+
+        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
+        public Response ProcesarCartas(Cartas obj)
+        {
+            try
+            {
+                return ClsCartas.ProcesarCartas(obj);
+            }
+            catch (Exception e)
+            {
+                return new Response
+                {
+                    IsSuccess = false
+                };
+            }
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
+        public DataSet ConsultarCartas(Cartas obj)
+        {
+            try
+            {
+                return ClsCartas.ConsultarCartas(obj);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+
+        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
+        public Response ProcesarOrdenCompra(OrdenCompra obj)
+        {
+            try
+            {
+                return ClsOrdenCompra.ProcesarOrdenCompra(obj);
+            }
+            catch (Exception e)
+            {
+                return new Response
+                {
+                    IsSuccess = false
+                };
+            }
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
+        public DataSet ConsultarOrdenCompra(OrdenCompra obj)
+        {
+            try
+            {
+                return ClsOrdenCompra.ConsultarOrdenCompra(obj);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
     }
 }

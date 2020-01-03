@@ -1163,4 +1163,224 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ProcesarProveedor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Proveedor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Proveedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdProveedor" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NumeroCedula" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NombreFantasia" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NombreReal" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PrimerNombreApoderado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SegundoNombreApoderado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PrimerApellidoApoderado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SegundoApellidoApoderado" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CedulaApoderado" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaRige" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaVence" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionConvenio" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BeneficioAsociado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BeneficioASEPBA" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DocumentoAdjunto" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PersonaContacto" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CorreoContacto" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TelefonoContacto" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SegundaPersonaContacto" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CorreoSegundoContacto" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TelefonoSegundoContacto" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Logo" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarProveedorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarProveedorResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarProveedor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Proveedor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarProveedorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarProveedorResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarSocio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Socios" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Socios">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdSocio" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NumeroIdentificacion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PrimerNombreSocio" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SegundoNombreSocio" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PrimerApellidoSocio" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SegundoApellidoSocio" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Empresa" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaIngresoAsociacion" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarSocioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarSocioResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarSocio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Socios" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarSocioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarSocioResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarCartas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Cartas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Cartas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCarta" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdSocio" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdProveedor" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CantidadImpresiones" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarCartasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarCartasResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarCartas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Cartas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarCartasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarCartasResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcesarOrdenCompra">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:OrdenCompra" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="OrdenCompra">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdOrdenCompra" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdSocio" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdProveedor" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaEmision" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="MontoTotal" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NumeroFacturaProforma" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarOrdenCompraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarOrdenCompraResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarOrdenCompra">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:OrdenCompra" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarOrdenCompraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarOrdenCompraResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

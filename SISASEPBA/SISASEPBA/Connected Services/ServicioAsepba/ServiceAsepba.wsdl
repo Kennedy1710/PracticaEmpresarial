@@ -245,6 +245,54 @@
   <wsdl:message name="IServiceAsepba_ConsultarTipoDocumento_OutputMessage">
     <wsdl:part name="parameters" element="tns:ConsultarTipoDocumentoResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarProveedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarProveedor" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarProveedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarProveedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProveedor" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarProveedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarSocio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarSocio" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarSocio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarSocioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarSocio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarSocio" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarSocio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarSocioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarCartas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarCartas" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarCartas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarCartasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarCartas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCartas" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarCartas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCartasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarOrdenCompra_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarOrdenCompra" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarOrdenCompra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarOrdenCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarOrdenCompra_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarOrdenCompra" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarOrdenCompra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarOrdenCompraResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiceAsepba">
     <wsdl:operation name="ProcesarUsuarios">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarUsuarios" message="tns:IServiceAsepba_ProcesarUsuarios_InputMessage" />
@@ -405,6 +453,38 @@
     <wsdl:operation name="ConsultarTipoDocumento">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarTipoDocumento" message="tns:IServiceAsepba_ConsultarTipoDocumento_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarTipoDocumentoResponse" message="tns:IServiceAsepba_ConsultarTipoDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarProveedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarProveedor" message="tns:IServiceAsepba_ProcesarProveedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarProveedorResponse" message="tns:IServiceAsepba_ProcesarProveedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProveedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarProveedor" message="tns:IServiceAsepba_ConsultarProveedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarProveedorResponse" message="tns:IServiceAsepba_ConsultarProveedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarSocio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarSocio" message="tns:IServiceAsepba_ProcesarSocio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarSocioResponse" message="tns:IServiceAsepba_ProcesarSocio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSocio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarSocio" message="tns:IServiceAsepba_ConsultarSocio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarSocioResponse" message="tns:IServiceAsepba_ConsultarSocio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarCartas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarCartas" message="tns:IServiceAsepba_ProcesarCartas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarCartasResponse" message="tns:IServiceAsepba_ProcesarCartas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCartas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarCartas" message="tns:IServiceAsepba_ConsultarCartas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarCartasResponse" message="tns:IServiceAsepba_ConsultarCartas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarOrdenCompra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarOrdenCompra" message="tns:IServiceAsepba_ProcesarOrdenCompra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarOrdenCompraResponse" message="tns:IServiceAsepba_ProcesarOrdenCompra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarOrdenCompra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarOrdenCompra" message="tns:IServiceAsepba_ConsultarOrdenCompra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarOrdenCompraResponse" message="tns:IServiceAsepba_ConsultarOrdenCompra_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceAsepba" type="tns:IServiceAsepba">
@@ -762,6 +842,78 @@
     </wsdl:operation>
     <wsdl:operation name="ConsultarTipoDocumento">
       <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarTipoDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarProveedor">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProveedor">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarSocio">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarSocio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSocio">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarSocio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarCartas">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarCartas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCartas">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarCartas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarOrdenCompra">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarOrdenCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarOrdenCompra">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarOrdenCompra" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

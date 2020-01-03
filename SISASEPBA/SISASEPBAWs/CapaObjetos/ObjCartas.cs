@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace SISASEPBAWs.CapaObjetos
+{
+    public class ObjCartas
+    {
+        public string Accion { get; set; } = string.Empty;
+
+        public int IdCarta { get; set; } = 0;
+
+        public int IdSocio { get; set; } = 0;
+
+        public int IdProveedor { get; set; } = 0;
+
+        public DateTime Fecha { get; set; } = DateTime.Now;
+
+        public int CantidadImpresiones { get; set; } = 0;
+
+        public string UsuarioCreacion { get; set; } = string.Empty;
+
+        public DateTime FechaCreacion { get; set; } = DateTime.Now;
+
+        public string UsuarioModificacion { get; set; } = string.Empty;
+
+        public DateTime FechaModificacion { get; set; } = DateTime.Now;
+    }
+}
