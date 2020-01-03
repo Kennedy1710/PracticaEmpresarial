@@ -1,0 +1,96 @@
+﻿@model SISASEPBA.Models.OrdenDeCompra
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="panel panel-default">
+    <div class="panel panel-heading">
+        <strong>Editar</strong>
+    </div>
+    <div class="panel panel-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        @Html.HiddenFor(model => model.IdOrdenCompra, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.HiddenFor(model => model.IdOrdenCompra, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.IdSocio, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("IdSocio", new SelectList(ViewBag.Socios, "IdSocio", "Empresa"), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.IdSocio, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.IdProveedor, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("IdProveedor", new SelectList(ViewBag.Proveedor, "IdProveedor", "NombreReal"), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.IdProveedor, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.FechaEmision, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.FechaEmision, new { htmlAttributes = new { @class =  "datepicker form-control", @type = "date" } })
+                            @Html.ValidationMessageFor(model => model.FechaEmision, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.MontoTotal, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.MontoTotal, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.MontoTotal, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.NumeroFacturaProforma, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.NumeroFacturaProforma, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.NumeroFacturaProforma, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-6">
+                        <input type="submit" value="Guardar cambios" class="btn btn-success" />
+                        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-danger" })
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

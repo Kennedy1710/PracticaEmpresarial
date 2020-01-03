@@ -172,14 +172,6 @@ namespace SISASEPBAWs
         [OperationContract]
         [TransactionFlow(TransactionFlowOption.Allowed)]
         DataSet ConsultarEmpleadoConceptoLiquidacion(EmpleadoConceptoLiquidacion obj);
-
-        [OperationContract]
-        [TransactionFlow(TransactionFlowOption.Allowed)]
-        Response ProcesarTipoAccion(TipoAccion obj);
-
-        [OperationContract]
-        [TransactionFlow(TransactionFlowOption.Allowed)]
-        DataSet ConsultarTipoAccion(TipoAccion obj);
     }
 
 
@@ -1114,34 +1106,60 @@ namespace SISASEPBAWs
         [DataMember]
         public DateTime FechaModificacion { get; set; } = DateTime.Now;
     }
-
     [DataContract]
-    public class TipoAccion
+    public class Documentos
     {
         [DataMember]
         public string Accion { get; set; } = string.Empty;
-
         [DataMember]
-        public int IdTipoAccion { get; set; } = 0;
-
+        public int IdDocumento { get; set; } = 0;
         [DataMember]
-        public string Alias { get; set; } = string.Empty;
-
+        public int IdTipoDocumento { get; set; } = 0;
+        [DataMember]
+        public string TituloDocumento { get; set; } = string.Empty;
         [DataMember]
         public string Descripcion { get; set; } = string.Empty;
-
+        [DataMember]
+        public DateTime FechaRige { get; set; } = DateTime.Now;
+        [DataMember]
+        public DateTime FechaVence { get; set; } = DateTime.Now;
+        [DataMember]
+        public string Estado { get; set; } = string.Empty;
+        [DataMember]
+        public byte[] DocumentoAdjunto = null;
+        [DataMember]
+        public int IdRenovacion { get; set; } = 0;
         [DataMember]
         public string UsuarioCreacion { get; set; } = string.Empty;
-
         [DataMember]
         public DateTime FechaCreacion { get; set; } = DateTime.Now;
-
-        [DataMember]
-        public DateTime FechaModificacion { get; set; } = DateTime.Now;
-
         [DataMember]
         public string UsuarioModificacion { get; set; } = string.Empty;
+        [DataMember]
+        public DateTime FechaModificacion { get; set; } = DateTime.Now;
+    }
 
+    [DataContract]
+    public class TipoDocumento
+    {
+        [DataMember]
+        public string Accion { get; set; } = string.Empty;
+        [DataMember]
+        public int IdTipoDocumento { get; set; } = 0;
+        [DataMember]
+        public string Alias { get; set; } = string.Empty;
+        [DataMember]
+        public string Descripcion { get; set; } = string.Empty;
+        [DataMember]
+        public bool Estado { get; set; } = false;
+        [DataMember]
+        public string UsuarioCreacion { get; set; } = string.Empty;
+        [DataMember]
+        public DateTime FechaCreacion { get; set; } = DateTime.Now;
+        [DataMember]
+        public string UsuarioModificacion { get; set; } = string.Empty;
+        [DataMember]
+        public DateTime FechaModificacion { get; set; } = DateTime.Now;
     }
 
 

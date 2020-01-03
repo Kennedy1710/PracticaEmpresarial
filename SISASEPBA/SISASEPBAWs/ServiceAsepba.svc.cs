@@ -566,35 +566,6 @@ namespace SISASEPBAWs
             }
         }
 
-        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
-        public Response ProcesarTipoAccion(TipoAccion obj)
-        {
-            try
-            {
-                return ClsTipoAccion.ProcesarTipoAccion(obj);
-            }
-            catch (Exception e)
-            {
-                return new Response
-                {
-                    IsSuccess = false
-                };
-            }
-        }
-
-        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
-        public DataSet ConsultarTipoAccion(TipoAccion obj)
-        {
-            try
-            {
-                return ClsTipoAccion.ConsultarTipoAccion(obj);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
 
     }
 }
