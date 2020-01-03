@@ -180,6 +180,7 @@
     <Compile Include="Controllers\ConceptosController.cs" />
     <Compile Include="Controllers\ControlVacacionalController.cs" />
     <Compile Include="Controllers\DepartamentosController.cs" />
+    <Compile Include="Controllers\DocumentosController.cs" />
     <Compile Include="Controllers\EmpleadoConceptoController.cs" />
     <Compile Include="Controllers\EmpleadoConceptoLiquidacionController.cs" />
     <Compile Include="Controllers\EmpleadoConceptoNominaController.cs" />
@@ -221,6 +222,7 @@
     <Compile Include="Models\Conceptos.cs" />
     <Compile Include="Models\ControlVacacional.cs" />
     <Compile Include="Models\Departamento.cs" />
+    <Compile Include="Models\Documentos.cs" />
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\EmpleadoConceptoLiquidacion.cs" />
     <Compile Include="Models\EmpleadoConceptoNomina.cs" />
@@ -234,6 +236,7 @@
     <Compile Include="Models\NominasHistorico.cs" />
     <Compile Include="Models\Puesto.cs" />
     <Compile Include="Models\TipoCapacitaciones.cs" />
+    <Compile Include="Models\TipoDocumento.cs" />
     <Compile Include="Models\TipoLicencias.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -611,6 +614,9 @@
     <Content Include="Views\NominasHistorico\Index.cshtml" />
     <Content Include="Views\Capacitaciones\Index.cshtml" />
     <Content Include="Views\Capacitaciones\Create.cshtml" />
+    <Content Include="Views\Documentos\Index.cshtml" />
+    <Content Include="Views\Documentos\Create.cshtml" />
+    <Content Include="Views\Documentos\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

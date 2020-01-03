@@ -227,6 +227,24 @@
   <wsdl:message name="IServiceAsepba_ConsultarEmpleadoConceptoLiquidacion_OutputMessage">
     <wsdl:part name="parameters" element="tns:ConsultarEmpleadoConceptoLiquidacionResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarDocumentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarDocumentos" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ProcesarDocumentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesarDocumentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarDocumentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarDocumentos" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarDocumentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarDocumentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarTipoDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarTipoDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IServiceAsepba_ConsultarTipoDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarTipoDocumentoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiceAsepba">
     <wsdl:operation name="ProcesarUsuarios">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarUsuarios" message="tns:IServiceAsepba_ProcesarUsuarios_InputMessage" />
@@ -375,6 +393,18 @@
     <wsdl:operation name="ConsultarEmpleadoConceptoLiquidacion">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoConceptoLiquidacion" message="tns:IServiceAsepba_ConsultarEmpleadoConceptoLiquidacion_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoConceptoLiquidacionResponse" message="tns:IServiceAsepba_ConsultarEmpleadoConceptoLiquidacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarDocumentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarDocumentos" message="tns:IServiceAsepba_ProcesarDocumentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ProcesarDocumentosResponse" message="tns:IServiceAsepba_ProcesarDocumentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDocumentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarDocumentos" message="tns:IServiceAsepba_ConsultarDocumentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarDocumentosResponse" message="tns:IServiceAsepba_ConsultarDocumentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTipoDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarTipoDocumento" message="tns:IServiceAsepba_ConsultarTipoDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceAsepba/ConsultarTipoDocumentoResponse" message="tns:IServiceAsepba_ConsultarTipoDocumento_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceAsepba" type="tns:IServiceAsepba">
@@ -705,6 +735,33 @@
     </wsdl:operation>
     <wsdl:operation name="ConsultarEmpleadoConceptoLiquidacion">
       <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarEmpleadoConceptoLiquidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarDocumentos">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ProcesarDocumentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDocumentos">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarDocumentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTipoDocumento">
+      <soap:operation soapAction="http://tempuri.org/IServiceAsepba/ConsultarTipoDocumento" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

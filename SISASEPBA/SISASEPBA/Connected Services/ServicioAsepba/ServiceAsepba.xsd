@@ -1076,4 +1076,91 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ProcesarDocumentos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Documentos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Documentos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DocumentoAdjunto" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdDocumento" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoDocumento" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TituloDocumento" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaRige" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaVence" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdRenovacion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcesarDocumentosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcesarDocumentosResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarDocumentos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Documentos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarDocumentosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarDocumentosResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarTipoDocumento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TipoDocumento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TipoDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Accion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoDocumento" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Alias" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultarTipoDocumentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ConsultarTipoDocumentoResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

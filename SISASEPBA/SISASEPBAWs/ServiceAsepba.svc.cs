@@ -566,6 +566,48 @@ namespace SISASEPBAWs
             }
         }
 
+        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
+        public Response ProcesarDocumentos(Documentos obj)
+        {
+            try
+            {
+                return ClsDocumentos.ProcesarDocumentos(obj);
+            }
+            catch (Exception e)
+            {
+                return new Response
+                {
+                    IsSuccess = false
+                };
+            }
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
+        public DataSet ConsultarDocumentos(Documentos obj)
+        {
+            try
+            {
+                return ClsDocumentos.ConsultarDocumentos(obj);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
+        public DataSet ConsultarTipoDocumento(TipoDocumento obj)
+        {
+            try
+            {
+                return ClsTipoDocumento.ConsultarTipoDocumento(obj);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
 
     }
 }
